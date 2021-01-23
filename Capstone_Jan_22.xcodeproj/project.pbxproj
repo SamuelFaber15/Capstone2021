@@ -11,6 +11,8 @@
 		FA06849525BB931500AB975A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06849425BB931500AB975A /* ContentView.swift */; };
 		FA06849725BB931600AB975A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA06849625BB931600AB975A /* Assets.xcassets */; };
 		FA06849A25BB931600AB975A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA06849925BB931600AB975A /* Preview Assets.xcassets */; };
+		FA0684B025BCBCE600AB975A /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0684AF25BCBCE600AB975A /* SignInView.swift */; };
+		FA0684B325BCBD0300AB975A /* SignInContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0684B225BCBD0300AB975A /* SignInContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		FA06849625BB931600AB975A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA06849925BB931600AB975A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA06849B25BB931600AB975A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA0684AF25BCBCE600AB975A /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		FA0684B225BCBD0300AB975A /* SignInContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				FA06849225BB931500AB975A /* Capstone_Jan_22App.swift */,
 				FA06849425BB931500AB975A /* ContentView.swift */,
+				FA0684B225BCBD0300AB975A /* SignInContentView.swift */,
+				FA0684AF25BCBCE600AB975A /* SignInView.swift */,
 				FA06849625BB931600AB975A /* Assets.xcassets */,
 				FA06849B25BB931600AB975A /* Info.plist */,
 				FA06849825BB931600AB975A /* Preview Content */,
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0684B325BCBD0300AB975A /* SignInContentView.swift in Sources */,
+				FA0684B025BCBCE600AB975A /* SignInView.swift in Sources */,
 				FA06849525BB931500AB975A /* ContentView.swift in Sources */,
 				FA06849325BB931500AB975A /* Capstone_Jan_22App.swift in Sources */,
 			);
