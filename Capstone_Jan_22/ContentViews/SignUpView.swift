@@ -48,6 +48,7 @@ struct SignUpView: View {
                     Button(action: {
                         FBAuth.createUser(withEmail: self.user.email,
                                           name: self.user.fullname,
+                                          captions: [],
                                           password: self.user.password) {( result) in
                             switch result {
                             case .failure(let error):
@@ -78,6 +79,8 @@ struct SignUpView: View {
         }
     }
 }
+
+
 
 // OLD CODE!! Keeping in here just for reference for now (1/27). Will likely delete.
 

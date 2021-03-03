@@ -19,6 +19,9 @@ struct Feed: Codable {
   var data: [MediaData]
   var paging: PagingData
 }
+struct Captions: Codable {
+  var caption: [String] = []
+}
 struct MediaData: Codable {
   var id: String
   var caption: String?

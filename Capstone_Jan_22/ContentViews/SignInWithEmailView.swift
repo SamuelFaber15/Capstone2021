@@ -16,9 +16,19 @@ struct SignInWithEmailView: View {
     @State private var showAlert = false
     @State private var authError: EmailAuthError?
     var body: some View {
-        
+        ZStack{
+//            Color("HomeColor")
+//                .ignoresSafeArea()
+            
+            Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [Color("HomeColor2"), Color("HomeColor")]), startPoint: .topLeading, endPoint: .bottomTrailing)).ignoresSafeArea()
+            
         VStack{
-            Image("TacoBell")
+            Image("HomeImage")
+                .resizable()
+                .frame(width: 200.0, height: 200.0)
+            Text("SideKick").font(.largeTitle)
+                .multilineTextAlignment(.center)
+
         
         VStack {
             TextField("Email Address", text: self.$user.email)
@@ -55,7 +65,7 @@ struct SignInWithEmailView: View {
                 .opacity(user.loginIsComplete ? 1 : 0.75)
                 
                 HStack{
-                    Text("Don't Have An Account?").foregroundColor(Color.gray.opacity(0.5))
+                    Text("Don't Have An Account?").foregroundColor(Color.black.opacity(0.5))
                 Button(action: {
                     self.action = .signUp
                     self.showSheet = true
@@ -75,9 +85,10 @@ struct SignInWithEmailView: View {
                 })
             }
         }
-        .padding(.top, 100)
+//        .padding(.top, 100)
         .frame(width: 300)
         .textFieldStyle(RoundedBorderTextFieldStyle())
+    }
     }
     }
 }

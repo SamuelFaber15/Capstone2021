@@ -10,15 +10,47 @@ import Firebase
 struct HomeView: View {
     @EnvironmentObject var userInfo: UserInfo
     var body: some View {
-        NavigationView {
-            Text("Logged in as \(userInfo.user.name)")
-                .navigationBarTitle("Firebase Login")
-                .navigationBarItems(leading: NavigationLink(destination: InstagramView()) {
-                    Text("Do Something")
-                }, trailing: Button("Log Out") {
+        NavigationView{
+            ZStack {
+                
+                Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [Color("HomeColor2"), Color("HomeColor")]), startPoint: .topLeading, endPoint: .bottomTrailing)).ignoresSafeArea()
+                VStack{
+            Text("Welcome \(userInfo.user.name)!\n Hope your day is going great!")
+                    VStack{
+                        HStack{
+                            VStack{
+                                Image("ResourcesIcon")
+                                    .renderingMode(.original)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 100, height: 100)
+                            }
+                            VStack{
+                                Image("AnalyticsIcon")
+                                    .renderingMode(.original)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 100, height: 100)
+                            }.padding(.leading, 50)
+                        }.padding(.top, 70)
+                        HStack{
+                            VStack{
+                        Text("My Resources")
+                            }
+                            VStack{
+                        Text("My Analytics")
+                            }.padding(.leading, 50)
+                        }
+                    }
+                }
+                .multilineTextAlignment(.center)
+                .navigationBarItems(leading: Button("Log Out") {
                     FBAuth.logout { (result) in
                         print("Logged out")
                     }
+                },
+                trailing: NavigationLink(destination: InstagramView()) {
+                    Text("Instagram Data")
                 })
                 .onAppear {
                     guard let uid = Auth.auth().currentUser?.uid else {
@@ -34,6 +66,7 @@ struct HomeView: View {
                         }
                     }
                 }
+            }
         }
     }
 }

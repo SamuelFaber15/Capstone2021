@@ -78,11 +78,9 @@ class InstagramApi {
         let session = URLSession.shared
         let task = session.dataTask(with: request, completionHandler: { data, response, error in
             if let response = response {
-                print("***caption_data***")
                 print(response)
             }
             do { let captions = try JSONDecoder().decode(Feed.self, from: data!)
-                print("fjkl")
                 print(captions)
                 DispatchQueue.main.async {
                     completion(captions)
@@ -90,7 +88,6 @@ class InstagramApi {
 //                completion(captions)
             }
             catch let error as NSError {
-                print("this is an error")
                 print(error)
             }
         })

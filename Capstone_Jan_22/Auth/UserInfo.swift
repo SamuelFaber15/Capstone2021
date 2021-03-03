@@ -13,7 +13,7 @@ class UserInfo: ObservableObject {
         case undefined, signedOut, signedIn
     }
     @Published var isUserAuthenticated: FBAuthState = .undefined
-    @Published var user: FBUser = .init(uid: "", name: "", email: "")
+    @Published var user: FBUser = .init(uid: "", name: "", email: "", captions: [])
     
     var authStateDidChangeListenerHandle: AuthStateDidChangeListenerHandle?
     func configureFirebaseStateDidChange() {
@@ -23,14 +23,14 @@ class UserInfo: ObservableObject {
                 return
             }
             self.isUserAuthenticated = .signedIn
-//            FBFirestore.retrieveFBUser(uid: user.uid) { (result) in
-//                switch result {
-//                case .failure(let error):
-//                    print(error.localizedDescription)
-//                case .success(let user):
-//                    self.user = user
-//                }
-//            }
+            FBFirestore.retrieveFBUser(uid: user.uid) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                case .success(let user):
+                    self.user = user
+                }
+            }
         })
     }
 }
