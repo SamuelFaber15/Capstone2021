@@ -1,4 +1,5 @@
-//
+//  Login view
+
 //  LoginContentView2.swift
 //  Capstone_Jan_22
 //
@@ -18,6 +19,8 @@ struct LoginView: View {
             SignInWithEmailView(showSheet: $showSheet, action: $action)
 //            SignInWithAppleView().frame(width: 200, height: 50)
         }
+        
+        // Seperate view, called by .sheet
             .sheet(isPresented: $showSheet) {
                 if self.action == .signUp {
                     SignUpView()

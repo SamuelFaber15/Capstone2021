@@ -1,3 +1,4 @@
+//  This is the home view (Recources, My Analytics, Instagram Data, Profile View)
 //
 //  HomeContentView.swift
 //  Capstone_Jan_22
