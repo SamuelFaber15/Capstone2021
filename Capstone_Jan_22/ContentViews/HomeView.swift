@@ -19,28 +19,50 @@ struct HomeView: View {
                     VStack{
                         HStack{
                             VStack{
-                                Image("ResourcesIcon")
-                                    .renderingMode(.original)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 100, height: 100)
+                                NavigationLink(destination: ResourcesView()){
+                                    Image("ResourcesIcon")
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 100, height: 100)
+                                }
                             }
                             VStack{
-                                Image("AnalyticsIcon")
-                                    .renderingMode(.original)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 100, height: 100)
+                                NavigationLink(destination: AnalyticsView()){
+                                    Image("AnalyticsIcon")
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 100, height: 100)
+                                }
                             }.padding(.leading, 50)
                         }.padding(.top, 70)
                         HStack{
                             VStack{
-                        Text("My Resources")
+                                NavigationLink(destination: ResourcesView()){
+                                    Text("My Resources")
+                                }
                             }
                             VStack{
-                        Text("My Analytics")
+                                NavigationLink(destination: AnalyticsView()){
+                                    Text("My Analytics")
+                                }
                             }.padding(.leading, 50)
                         }
+                        NavigationLink(destination: InstagramView()){
+                            VStack{
+                                HStack{
+                                    Image("instagram_icon")
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 100, height: 100)
+                                }
+                                HStack{
+                                    Text("Instagram Data")
+                                }
+                            }
+                        }.padding(.top, 70)
                     }
                 }
                 .multilineTextAlignment(.center)
@@ -49,8 +71,8 @@ struct HomeView: View {
                         print("Logged out")
                     }
                 },
-                trailing: NavigationLink(destination: InstagramView()) {
-                    Text("Instagram Data")
+                trailing: NavigationLink(destination: ProfileView()) {
+                    Text("Profile")
                 })
                 .onAppear {
                     guard let uid = Auth.auth().currentUser?.uid else {
