@@ -64,16 +64,19 @@ struct ProfileEditView: View {
     
     func reauthUser() {
         let user = Auth.auth().currentUser
-        let credential: AuthCredential = EmailAuthProvider.credential(withEmail: "sfaber@byu.edu", password: "Password123")
+        let credential: AuthCredential = EmailAuthProvider.credential(withEmail: userInfo.user.email, password: "Password123")
 
         // Prompt the user to re-provide their sign-in credentials
-
+        print(userInfo.user.email)
         user?.reauthenticate(with: credential) { authResults, error in
-//          if let error = error {
-//            // An error happened.
-//          } else {
-//            // User re-authenticated.
-//          }
+          if let error = error {
+            print("***there***")
+            print (error)
+            // An error happened.
+          } else {
+            print("***where***")
+            // User re-authenticated.
+          }
         }
     }
     

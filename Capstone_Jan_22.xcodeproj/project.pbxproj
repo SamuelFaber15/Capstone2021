@@ -12,6 +12,7 @@
 		FA06849325BB931500AB975A /* Capstone_Jan_22App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06849225BB931500AB975A /* Capstone_Jan_22App.swift */; };
 		FA06849725BB931600AB975A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA06849625BB931600AB975A /* Assets.xcassets */; };
 		FA06849A25BB931600AB975A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA06849925BB931600AB975A /* Preview Assets.xcassets */; };
+		FA30834825FFB854009C5B12 /* SentClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FA30834725FFB854009C5B12 /* SentClassifier.mlmodel */; };
 		FA7A7F9D25C0CAEB0054B8A2 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A7F9C25C0CAEB0054B8A2 /* UserInfo.swift */; };
 		FA7A7FAA25C0D4720054B8A2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A7FA925C0D4720054B8A2 /* UserViewModel.swift */; };
 		FA7A7FF625C0F8CE0054B8A2 /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A7FF225C0F8CC0054B8A2 /* FBUser.swift */; };
@@ -25,7 +26,6 @@
 		FA9D0A3D25EF413D00E6EB46 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D0A3C25EF413D00E6EB46 /* ProfileView.swift */; };
 		FA9D0AA925F0108E00E6EB46 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D0AA825F0108E00E6EB46 /* ProfileEditView.swift */; };
 		FAA3E82425D5D1E000DC85C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3E81825D5D1E000DC85C1 /* ContentView.swift */; };
-		FAA3E82525D5D1E000DC85C1 /* SignInWithAppleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3E81925D5D1E000DC85C1 /* SignInWithAppleView.swift */; };
 		FAA3E82625D5D1E000DC85C1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3E81A25D5D1E000DC85C1 /* HomeView.swift */; };
 		FAA3E82725D5D1E000DC85C1 /* CaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3E81B25D5D1E000DC85C1 /* CaptionView.swift */; };
 		FAA3E82825D5D1E000DC85C1 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3E81C25D5D1E000DC85C1 /* WebView.swift */; };
@@ -48,6 +48,7 @@
 		FA06849625BB931600AB975A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA06849925BB931600AB975A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA06849B25BB931600AB975A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA30834725FFB854009C5B12 /* SentClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentClassifier.mlmodel; sourceTree = "<group>"; };
 		FA7A7F9C25C0CAEB0054B8A2 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		FA7A7FA925C0D4720054B8A2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		FA7A7FF225C0F8CC0054B8A2 /* FBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		FA9D0A3C25EF413D00E6EB46 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FA9D0AA825F0108E00E6EB46 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		FAA3E81825D5D1E000DC85C1 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FAA3E81925D5D1E000DC85C1 /* SignInWithAppleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithAppleView.swift; sourceTree = "<group>"; };
 		FAA3E81A25D5D1E000DC85C1 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FAA3E81B25D5D1E000DC85C1 /* CaptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionView.swift; sourceTree = "<group>"; };
 		FAA3E81C25D5D1E000DC85C1 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -124,6 +124,7 @@
 		FA06849125BB931500AB975A /* Capstone_Jan_22 */ = {
 			isa = PBXGroup;
 			children = (
+				FA30834725FFB854009C5B12 /* SentClassifier.mlmodel */,
 				FA66897D25BF4EBE006888D8 /* ContentViews */,
 				FA7A7FB025C0D4C10054B8A2 /* Firestore */,
 				FA7A7FB125C0D4C90054B8A2 /* Auth */,
@@ -159,7 +160,6 @@
 				FA9D0AA825F0108E00E6EB46 /* ProfileEditView.swift */,
 				FAA3E81F25D5D1E000DC85C1 /* InstagramView.swift */,
 				FAA3E82225D5D1E000DC85C1 /* LoginView.swift */,
-				FAA3E81925D5D1E000DC85C1 /* SignInWithAppleView.swift */,
 				FAA3E82325D5D1E000DC85C1 /* SignInWithEmailView.swift */,
 				FAA3E82125D5D1E000DC85C1 /* SignUpView.swift */,
 				FAA3E81C25D5D1E000DC85C1 /* WebView.swift */,
@@ -310,7 +310,6 @@
 				FA7A7FF825C0F8CE0054B8A2 /* FBFireStore.swift in Sources */,
 				FA7A7FF925C0F8CE0054B8A2 /* FBFireStoreError.swift in Sources */,
 				FAA3E82D25D5D1E000DC85C1 /* SignUpView.swift in Sources */,
-				FAA3E82525D5D1E000DC85C1 /* SignInWithAppleView.swift in Sources */,
 				FA9D0A3D25EF413D00E6EB46 /* ProfileView.swift in Sources */,
 				FAA3E83325D5D2BC00DC85C1 /* InstagramApi.swift in Sources */,
 				FA7A7FF625C0F8CE0054B8A2 /* FBUser.swift in Sources */,
@@ -319,6 +318,7 @@
 				FA7A7F9D25C0CAEB0054B8A2 /* UserInfo.swift in Sources */,
 				FA9D0A3725EF382A00E6EB46 /* ResourcesView.swift in Sources */,
 				FAA3E82625D5D1E000DC85C1 /* HomeView.swift in Sources */,
+				FA30834825FFB854009C5B12 /* SentClassifier.mlmodel in Sources */,
 				FA06849325BB931500AB975A /* Capstone_Jan_22App.swift in Sources */,
 				FA7A7FF725C0F8CE0054B8A2 /* FBKeys.swift in Sources */,
 				FAA3E82725D5D1E000DC85C1 /* CaptionView.swift in Sources */,
