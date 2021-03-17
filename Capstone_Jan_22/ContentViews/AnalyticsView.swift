@@ -74,6 +74,6 @@ struct AnalyticsView: View {
 
 struct AnalyticsView_Previews: PreviewProvider {
     static var previews: some View {
-        SamAnalyticsView()
+        AnalyticsView()
     }
 }

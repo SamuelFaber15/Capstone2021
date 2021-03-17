@@ -28,7 +28,7 @@ struct HomeView: View {
                                 }
                             }
                             VStack{
-                                NavigationLink(destination: SamAnalyticsView()){
+                                NavigationLink(destination: AnalyticsView()){
                                     Image("AnalyticsIcon")
                                         .renderingMode(.original)
                                         .resizable()
