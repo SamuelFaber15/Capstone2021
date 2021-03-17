@@ -1,4 +1,5 @@
-//
+// User login function
+
 //  SignInWithEmailView.swift
 //  Capstone_Jan_22
 //

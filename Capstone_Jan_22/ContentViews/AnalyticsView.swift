@@ -1,4 +1,5 @@
-//
+//  Blank analytics view page
+
 //  AnalyticsView.swift
 //  Capstone_Jan_22
 //

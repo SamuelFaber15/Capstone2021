@@ -1,4 +1,5 @@
-//
+// Resources View (can include a link to a website)
+
 //  ResourcesView.swift
 //  Capstone_Jan_22
 //

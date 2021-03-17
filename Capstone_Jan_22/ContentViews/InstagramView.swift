@@ -1,4 +1,5 @@
-//
+// Prints out your instagram data - ONLY Pulls in the new captions
+
 //  InstagramView.swift
 //  Capstone_Jan_22
 //

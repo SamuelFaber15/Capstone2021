@@ -1,4 +1,4 @@
-//
+//  First view that pulls up
 //  ContentView.swift
 //  Capstone_Jan_22
 //
@@ -11,9 +11,11 @@ struct ContentView: View {
     @EnvironmentObject var userInfo: UserInfo
     var body: some View {
         Group {
+            // if the user is authenticated, it takes them to home
             if userInfo.isUserAuthenticated == .undefined {
                 Text("Loading...")
             } else if userInfo.isUserAuthenticated == .signedOut {
+            // if not, takes them to login view
                 LoginView()
             } else {
                 HomeView()
