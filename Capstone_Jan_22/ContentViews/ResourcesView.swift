@@ -16,6 +16,8 @@ struct ResourcesView: View {
         Button(action: { self.showStackoverflow = true }) {
             Text("Mental Health Awareness")
         }
+        
+        // from stack overflow -> opens it from our application
         .sheet(isPresented: self.$showStackoverflow) {
             SFSafariViewWrapper(url: URL(string: "https://www.nami.org/Get-Involved/Awareness-Events/Mental-Health-Month")!)
         }
