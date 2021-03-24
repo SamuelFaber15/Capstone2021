@@ -13,12 +13,22 @@ struct ContentView: View {
         Group {
             // if the user is authenticated, it takes them to home
             if userInfo.isUserAuthenticated == .undefined {
-                Text("Loading...")
+//                Text("Loading...")
+                ZStack{
+                Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [Color("HomeColor2"), Color("HomeColor")]), startPoint: .topLeading, endPoint: .bottomTrailing)).ignoresSafeArea()
+                VStack{
+                    Image("HomeImage")
+                        .resizable()
+                        .frame(width: 200.0, height: 200.0)
+                    Text("SideKick").font(.largeTitle)
+                        .multilineTextAlignment(.center)
+                }
+                }
             } else if userInfo.isUserAuthenticated == .signedOut {
             // if not, takes them to login view
                 LoginView()
             } else {
-                HomeView()
+                AppView()
             }
         }
         .onAppear {

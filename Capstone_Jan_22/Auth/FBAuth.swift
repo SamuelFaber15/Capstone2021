@@ -170,6 +170,7 @@ struct FBAuth {
                            name: String,
                            captions: Array<Any>,
                            password:String,
+                           score:String,
                            completionHandler:@escaping (Result<Bool,Error>) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if let err = error {
@@ -183,7 +184,8 @@ struct FBAuth {
             let data = FBUser.dataDict(uid: authResult!.user.uid,
                                              name: name,
                                              email: authResult!.user.email!,
-                                             captions: captions)
+                                             captions: captions,
+                                             score: score)
             
             FBFirestore.mergeFBUser(data, uid: authResult!.user.uid) { (result) in
                 completionHandler(result)
@@ -196,6 +198,7 @@ struct FBAuth {
                            name: String,
                            captions: Array<Any>,
                            password:String,
+                           score: String,
                            completionHandler:@escaping (Result<Bool,Error>) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if let err = error {
@@ -209,7 +212,8 @@ struct FBAuth {
             let data = FBUser.dataDict(uid: authResult!.user.uid,
                                              name: name,
                                              email: authResult!.user.email!,
-                                             captions: captions)
+                                             captions: captions,
+                                             score: score)
             
             FBFirestore.mergeFBUser(data, uid: authResult!.user.uid) { (result) in
                 completionHandler(result)

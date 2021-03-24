@@ -7,18 +7,28 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestore
 
 struct AnalyticsView: View {
     let sentimentClassifer = SentClassifier()
     @EnvironmentObject var userInfo: UserInfo
-    @State var sentimentLabel = "this"
+    @State var sentimentLabel = ""
     var body: some View {
+        VStack{
         Button(action: { fetchCaptions() }) {
             HStack {
                 Text("Run Analysis")
             }
         }
-        Text(sentimentLabel)
+            if userInfo.user.score != "" {
+                Text(userInfo.user.score)
+                Text("Updated Score:")
+                Text(sentimentLabel)
+            } else {
+                Text(sentimentLabel)
+            }
+        }
     }
     
     func fetchCaptions() {
@@ -37,8 +47,9 @@ struct AnalyticsView: View {
         do {
             let predictions = try self.sentimentClassifer.predictions(inputs: captions)
             var sentimentScore = 0
+            print(predictions.count)
+            let predictionCount = predictions.count
             for prediction in predictions{
-                print("there")
                 print(prediction.label)
                 let sentiment = prediction.label
                 
@@ -48,28 +59,38 @@ struct AnalyticsView: View {
                     sentimentScore -= 1
                 }
             }
-            updateUI(with: sentimentScore)
+            updateUI(with: sentimentScore, predictionsCount: predictionCount)
         } catch{
             print("There was an error w/ making a prediction, \(error)")
         }
     }
     
-    func updateUI(with sentimentScore: Int) {
-        if sentimentScore > 20 {
-            self.sentimentLabel = "😍" + String(sentimentScore) //sentiment label is connected to the UI
-        } else if sentimentScore > 10 {
-            self.sentimentLabel = "😀" + String(sentimentScore)
-        }else if sentimentScore > 0 {
-            self.sentimentLabel = "🙂" + String(sentimentScore)
-        }else if sentimentScore == 10 {
-            self.sentimentLabel = "😶" + String(sentimentScore)
-        }else if sentimentScore > -10 {
-            self.sentimentLabel = "😕" + String(sentimentScore)
-        }else if sentimentScore > -20 {
-            self.sentimentLabel = "🥺" + String(sentimentScore)
+    func updateUI(with sentimentScore: Int, predictionsCount: Int) {
+        print("7834")
+        print(predictionsCount)
+        let percentageNum = round(((Double(sentimentScore) / Double(predictionsCount))*100))
+        print(percentageNum)
+        print(sentimentScore/predictionsCount)
+        if percentageNum > 75 {
+            self.sentimentLabel = "😍" + String(sentimentScore) + " " + String(percentageNum) //sentiment label is connected to the UI
+        } else if percentageNum > 50 {
+            self.sentimentLabel = "😀" + String(sentimentScore) + " " + String(percentageNum)
+        }else if percentageNum > 40 {
+            self.sentimentLabel = "🙂" + String(sentimentScore) + " " + String(percentageNum)
+        }else if percentageNum == 30 {
+            self.sentimentLabel = "😶" + String(sentimentScore) + " " + String(percentageNum)
+        }else if percentageNum > 20 {
+            self.sentimentLabel = "😕" + String(sentimentScore) + " " + String(percentageNum)
+        }else if percentageNum > 10 {
+            self.sentimentLabel = "🥺" + String(sentimentScore) + " " + String(percentageNum)
         }else {
-            self.sentimentLabel = "😤" + String(sentimentScore)
+            self.sentimentLabel = "😤" + String(sentimentScore) + " " + String(percentageNum)
         }
+        let db = Firestore.firestore()
+        print("***here***")
+        print(percentageNum)
+        db.collection("users").document(self.userInfo.user.uid).updateData(["score": String(percentageNum)])
+        self.userInfo.configureFirebaseStateDidChange()
     }
 }
 

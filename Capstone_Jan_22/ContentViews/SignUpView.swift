@@ -49,7 +49,8 @@ struct SignUpView: View {
                         FBAuth.createUser(withEmail: self.user.email,
                                           name: self.user.fullname,
                                           captions: [],
-                                          password: self.user.password) {( result) in
+                                          password: self.user.password,
+                                          score: "") {( result) in
                             switch result {
                             case .failure(let error):
                                 self.errorString = error.localizedDescription

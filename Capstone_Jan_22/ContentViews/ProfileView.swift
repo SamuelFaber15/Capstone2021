@@ -26,6 +26,7 @@ struct ProfileView: View {
     // MARK: - UI Components
     
     var body: some View {
+        NavigationView{
         Form {
           Section(header: Text("Name")) {
             Text(userInfo.user.name)
@@ -52,6 +53,7 @@ struct ProfileView: View {
 //              self.presentationMode.wrappedValue.dismiss()
 //            }
 //          }
+        }
         }
     
   }

@@ -13,7 +13,7 @@ class UserInfo: ObservableObject {
         case undefined, signedOut, signedIn
     }
     @Published var isUserAuthenticated: FBAuthState = .undefined
-    @Published var user: FBUser = .init(uid: "", name: "", email: "", captions: [])
+    @Published var user: FBUser = .init(uid: "", name: "", email: "", captions: [], score: "")
     
     var authStateDidChangeListenerHandle: AuthStateDidChangeListenerHandle?
     func configureFirebaseStateDidChange() {

@@ -9,6 +9,7 @@
 import SwiftUI
 import Firebase
 struct HomeView: View {
+    let vc = UIHostingController(rootView: Text("Hello World"))
     @EnvironmentObject var userInfo: UserInfo
     var body: some View {
         NavigationView{

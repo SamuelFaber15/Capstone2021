@@ -13,14 +13,16 @@ struct FBUser {
     let name: String
     let email: String
     let captions: Array<Any>
+    let score: String
     
     // App Specific properties can be added here
     
-    init(uid: String, name: String, email: String, captions: Array<Any>) {
+    init(uid: String, name: String, email: String, captions: Array<Any>, score: String) {
         self.uid = uid
         self.name = name
         self.email = email
         self.captions = captions
+        self.score = score
     }
 
 }
@@ -31,6 +33,7 @@ extension FBUser {
         let name = documentData[FBKeys.User.name] as? String ?? ""
         let email = documentData[FBKeys.User.email] as? String ?? ""
         let captions = documentData[FBKeys.User.captions] as? Array<Any> ?? []
+        let score = documentData[FBKeys.User.score] as? String ?? ""
         
         // Make sure you also initialize any app specific properties if you have them
 
@@ -38,12 +41,13 @@ extension FBUser {
         self.init(uid: uid,
                   name: name,
                   email: email,
-                  captions: captions
+                  captions: captions,
+                  score: score
                   // Dont forget any app specific ones here too
         )
     }
     
-    static func dataDict(uid: String, name: String, email: String, captions: Array<Any>) -> [String: Any] {
+    static func dataDict(uid: String, name: String, email: String, captions: Array<Any>, score: String) -> [String: Any] {
         var data: [String: Any]
         
         // If name is not "" this must be a new entry so add all first time data
@@ -52,7 +56,8 @@ extension FBUser {
                 FBKeys.User.uid: uid,
                 FBKeys.User.name: name,
                 FBKeys.User.email: email,
-                FBKeys.User.captions: captions
+                FBKeys.User.captions: captions,
+                FBKeys.User.score: score
                 // Again, include any app specific properties that you want stored on creation
             ]
         } else {

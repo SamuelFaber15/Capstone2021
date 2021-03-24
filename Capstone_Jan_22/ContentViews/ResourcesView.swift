@@ -7,34 +7,178 @@
 //
 
 import SwiftUI
-import SafariServices
 
 struct ResourcesView: View {
-    @State var showStackoverflow:Bool = false
+    // MARK: - PROPERTIES
 
+    var recipes: [Goals] = goalData
+    
     var body: some View {
-        Button(action: { self.showStackoverflow = true }) {
-            Text("Mental Health Awareness")
-        }
-        
-        // from stack overflow -> opens it from our application
-        .sheet(isPresented: self.$showStackoverflow) {
-            SFSafariViewWrapper(url: URL(string: "https://www.nami.org/Get-Involved/Awareness-Events/Mental-Health-Month")!)
-        }
-    }
-}
-struct SFSafariViewWrapper: UIViewControllerRepresentable {
-    let url: URL
-    func makeUIViewController(context: UIViewControllerRepresentableContext<Self>) -> SFSafariViewController {
-        return SFSafariViewController(url: url)
-    }
-    func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SFSafariViewWrapper>) {
-        return
-    }
-}
+      
+      ScrollView(.vertical, showsIndicators: false) {
+        VStack(alignment: .center, spacing: 15) {
+          // MARK: - HEADER
 
-struct ResourcesView_Previews: PreviewProvider {
-    static var previews: some View {
-        ResourcesView()
+          HStack(alignment: .top, spacing: 10) {
+                    
+          }
+
+          HStack(alignment: .center, spacing: 0) {
+
+          }
+          
+          VStack(alignment: .center, spacing: 15) {
+              //Just to help with spacing
+              HStack(alignment: .top, spacing: 0) {
+                  Text("Overall Mental Health")
+                      .font(.title)
+                      .fontWeight(.medium)
+                      .foregroundColor(Color("ColorGreenAdaptive"))
+                      .multilineTextAlignment(.leading)
+                      .padding(.top)
+
+              }
+
+              ScrollView(.horizontal, showsIndicators: false) {
+                  HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
+                      
+                  ForEach(recipes) { item in
+                    ResourcesBookView(recipe: item)
+                      .frame(width: 120, height: 220)
+                      .environment(\.colorScheme, .dark)
+
+                  }
+              })
+              }
+              
+              HStack(alignment: .top, spacing: 0) {
+                  Text("Depression")
+                      .font(.title)
+                      .fontWeight(.medium)
+                      .foregroundColor(Color("ColorGreenAdaptive"))
+                      .multilineTextAlignment(.leading)
+                      .padding(.top)
+
+              }
+
+              
+              ScrollView(.horizontal, showsIndicators: false) {
+                  HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
+                      
+                  ForEach(recipes) { item in
+                    ResourcesBookView(recipe: item)
+                      .frame(width: 120, height: 220)
+                      .environment(\.colorScheme, .dark)
+
+                  }
+              })
+              }
+
+              HStack(alignment: .top, spacing: 0) {
+                  Text("Anxiety")
+                      .font(.title)
+                      .fontWeight(.medium)
+                      .foregroundColor(Color("ColorGreenAdaptive"))
+                      .multilineTextAlignment(.leading)
+                      .padding(.top)
+              }
+              
+              ScrollView(.horizontal, showsIndicators: false) {
+                  HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
+                      
+                  ForEach(recipes) { item in
+                    ResourcesBookView(recipe: item)
+                      .frame(width: 120, height: 220)
+                      .environment(\.colorScheme, .dark)
+
+                  }
+              })
+              }
+
+              HStack(alignment: .top, spacing: 0) {
+                  Text("Cyberbullying")
+                      .font(.title)
+                      .fontWeight(.medium)
+                      .foregroundColor(Color("ColorGreenAdaptive"))
+                      .multilineTextAlignment(.leading)
+                      .padding(.top)
+
+              }
+              
+              ScrollView(.horizontal, showsIndicators: false) {
+                  HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
+                      
+                  ForEach(recipes) { item in
+                    ResourcesBookView(recipe: item)
+                      .frame(width: 120, height: 220)
+                      .environment(\.colorScheme, .dark)
+
+                  }
+              })
+              }
+
+              
+              HStack(alignment: .top, spacing: 0) {
+                  Text("Body Dysmporphia")
+                      .font(.title)
+                      .fontWeight(.medium)
+                      .foregroundColor(Color("ColorGreenAdaptive"))
+                      .multilineTextAlignment(.leading)
+                      .padding(.top)
+
+              }
+              
+              ScrollView(.horizontal, showsIndicators: false) {
+                  HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
+                      
+                  ForEach(recipes) { item in
+                    ResourcesBookView(recipe: item)
+                      .frame(width: 120, height: 220)
+                      .environment(\.colorScheme, .dark)
+
+                  }
+              })
+              }
+              
+          }
+          .frame(maxWidth: 640)
+          .padding([.top, .leading, .trailing])
+          
+          // MARK: - FOOTER
+          
+          VStack(alignment: .center, spacing: 20) {
+            Text("Resources")
+              .fontWeight(.bold)
+              .modifier(Goals_TitleModifier())
+            Text("You are always enough. You deserve the best.")
+              .font(.system(.body, design: .serif))
+              .multilineTextAlignment(.center)
+              .foregroundColor(Color.gray)
+              .frame(minHeight: 60)
+          }
+          .frame(maxWidth: 640)
+          .padding()
+          .padding(.bottom, 85)
+        }
+      }
+      .edgesIgnoringSafeArea(.all)
+      .padding(0)
     }
-}
+  }
+
+  struct Goals_TitleModifier: ViewModifier {
+    func body(content: Content) -> some View {
+      content
+        .font(.system(.title, design: .serif))
+        .foregroundColor(Color("ColorGreenAdaptive"))
+        .padding(8)
+    }
+  }
+
+  struct ResourcesView_Previews2: PreviewProvider {
+    static var previews: some View {
+//      Group {
+        ResourcesView()
+//      }
+    }
+  }
