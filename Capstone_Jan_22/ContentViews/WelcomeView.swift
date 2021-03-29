@@ -25,7 +25,7 @@ struct WelcomeView: View {
                     .shadow(color: Color("ColorBlackTransparentDark"), radius: 12, x: 0, y: 8)
                     .scaleEffect(self.pulsateAnimation ? 1 : 1.2)
                     .opacity(self.pulsateAnimation ? 1 : 0.9)
-//                    .animation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true))
+                    .animation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true))
                   
                   Spacer()
                 }
@@ -39,13 +39,8 @@ struct WelcomeView: View {
                     self.pulsateAnimation.toggle()
                   })
             })
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                        self.show.toggle()
-                    }
             }
         }
-    }
   }
 
   struct WelcomeView_Previews: PreviewProvider {
