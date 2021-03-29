@@ -28,4 +28,15 @@ class AppDelegate: NSObject,UIApplicationDelegate {
         return true
     }
 }
+    
+//    let persistenceController = PersistenceController.shared
+//
+//    var body: some Scene {
+//        WindowGroup {
+//            AppView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//        }
+//    }
+//}
+
 

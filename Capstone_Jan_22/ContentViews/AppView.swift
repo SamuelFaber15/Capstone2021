@@ -29,8 +29,10 @@ struct AppView: View {
             Text("Home")
           })
             .tag(3)
+        
+        GoalsView_Tut(coreDM: CoreDataManager())
 
-        GoalsView()
+//        GoalsView()
           .tabItem({
             Image("tabicon-avocado")
             Text("Goals")

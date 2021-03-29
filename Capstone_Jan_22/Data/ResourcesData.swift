@@ -10,7 +10,7 @@ import SwiftUI
 
 let goalData: [Goals] = [
     Goals(
-    title: "GOAL TEST",
+    title: "How to Win Friends and Influence People",
     headline: "GOAL TEST",
     image: "HTWF",
     instructions: [

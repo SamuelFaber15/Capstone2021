@@ -75,7 +75,7 @@ struct AddGoalView: View {
                 .frame(minWidth: 0, maxWidth: .infinity)
   //              .background(themes[self.theme.themeSettings].themeColor)
                 .cornerRadius(9)
-                .foregroundColor(Color.white)
+                .foregroundColor(Color.green)
             } //: SAVE BUTTON
           } //: VSTACK
             .padding(.horizontal)
