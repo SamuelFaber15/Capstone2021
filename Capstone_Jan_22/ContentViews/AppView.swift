@@ -23,7 +23,8 @@ struct AppView: View {
             Text("Insights")
           })
             .tag(2)
-        WelcomeView()
+//        WelcomeView()
+        HomeView_Looping()
           .tabItem({
             Image("tabicon-settings")
             Text("Home")

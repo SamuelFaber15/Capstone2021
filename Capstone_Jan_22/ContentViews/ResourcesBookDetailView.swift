@@ -10,7 +10,7 @@ import SwiftUI
 struct ResourcesBookDetailView: View {
     // MARK: - PROPERTIES
     
-    var recipe: Goals
+    var resource: Resources
     
     @State private var pulsate: Bool = false
     @Environment(\.presentationMode) var presentationMode
@@ -19,13 +19,13 @@ struct ResourcesBookDetailView: View {
       ScrollView(.vertical, showsIndicators: false) {
         VStack(alignment: .center, spacing: 0) {
           // IMAGE
-          Image(recipe.image)
+          Image(resource.image)
             .resizable()
             .scaledToFit()
           
           Group {
             // TITLE
-            Text(recipe.title)
+            Text(resource.title)
               .font(.title)
               .fontWeight(.semibold)
               .multilineTextAlignment(.center)
@@ -33,47 +33,48 @@ struct ResourcesBookDetailView: View {
               .padding(.top, 10)
             
             // RATING
-  //          RecipeRatingView(recipe: recipe)
+  //          RecipeRatingView(resource: resource)
             
             // COOKING
-  //          RecipeCookingView(recipe: recipe)
+  //          RecipeCookingView(resource: resource)
             
             // INGREDIENTS
-              Text("Insights")
-                  .font(.largeTitle)
-              .fontWeight(.ultraLight)
+//              Text("Insights")
+//                  .font(.largeTitle)
+//              .fontWeight(.ultraLight)
 //              .modifier(TitleModifier())
             
-            VStack(alignment: .leading, spacing: 5) {
-              ForEach(recipe.notes, id: \.self) { item in
-                VStack(alignment: .leading, spacing: 5) {
-                  Text(item)
-                    .font(.footnote)
-                      .fontWeight(.thin)
-                      .multilineTextAlignment(.center)
-                      .padding([.leading, .bottom, .trailing])
-  //                Divider()
-                }
-              }
-            }
+////////////            THIS IS FOR THE NOTES
+//            VStack(alignment: .leading, spacing: 5) {
+//              ForEach(resource.notes, id: \.self) { item in
+//                VStack(alignment: .leading, spacing: 5) {
+//                  Text(item)
+//                    .font(.footnote)
+//                      .fontWeight(.thin)
+//                      .multilineTextAlignment(.center)
+//                      .padding([.leading, .bottom, .trailing])
+//  //                Divider()
+//                }
+//              }
+//            }
             
             // INSTRUCTIONS
-              Image("leaf")
-                  .padding(.all)
-                  
-              Text("What Now?")
-                  .font(.largeTitle)
-              .fontWeight(.ultraLight)
+//              Image("leaf")
+//                  .padding(.all)
+//
+//              Text("What Now?")
+//                  .font(.largeTitle)
+//              .fontWeight(.ultraLight)
 //              .modifier(TitleModifier())
             
-            ForEach(recipe.instructions, id: \.self) { item in
+            ForEach(resource.instructions, id: \.self) { item in
               VStack(alignment: .center, spacing: 5) {
-                Image(systemName: "chevron.down.circle")
-                  .resizable()
-                  .frame(width: 42, height: 42, alignment: .center)
-                  .imageScale(.large)
-                  .font(Font.title.weight(.ultraLight))
-                  .foregroundColor(Color("ColorGreenAdaptive"))
+//                Image(systemName: "chevron.down.circle")
+//                  .resizable()
+//                  .frame(width: 42, height: 42, alignment: .center)
+//                  .imageScale(.large)
+//                  .font(Font.title.weight(.ultraLight))
+//                  .foregroundColor(Color("ColorGreenAdaptive"))
                 
                   Text(item)
                       .fontWeight(.thin)
@@ -119,6 +120,6 @@ struct ResourcesBookDetailView: View {
 
   struct ResourcesBookDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ResourcesBookDetailView(recipe: goalData[0])
+        ResourcesBookDetailView(resource: mentalHealthResources[0])
     }
   }

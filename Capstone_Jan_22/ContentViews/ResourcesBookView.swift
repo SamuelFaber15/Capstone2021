@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct ResourcesBookView: View {
+struct MentalHealthBookView: View {
       // MARK: - PROPERTIES
       
-      var recipe: Goals
+      var resource: Resources
       var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
       @State private var showModal: Bool = false
       
       var body: some View {
         VStack(alignment: .leading, spacing: 0) {
           // CARD IMAGE
-          Image(recipe.image)
+          Image(resource.image)
             .resizable()
             .scaledToFit()
             .overlay(
@@ -67,14 +67,14 @@ struct ResourcesBookView: View {
           self.showModal = true
         }
         .sheet(isPresented: self.$showModal) {
-            ResourcesBookDetailView(recipe: self.recipe)
+            ResourcesBookDetailView(resource: self.resource)
         }
       }
     }
 
-    struct ResourcesBookView_Previews: PreviewProvider {
+    struct MentalHealthBookView_Previews: PreviewProvider {
       static var previews: some View {
-        ResourcesBookView(recipe: goalData[0])
+        MentalHealthBookView(resource: mentalHealthResources[0])
           .previewLayout(.sizeThatFits)
       }
     }

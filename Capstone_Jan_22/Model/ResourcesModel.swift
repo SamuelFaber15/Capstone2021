@@ -9,11 +9,11 @@ import SwiftUI
 
 // MARK: - RECIPE MODEL
 
-struct Goals: Identifiable {
+struct Resources: Identifiable {
   var id = UUID()
   var title: String
-  var headline: String
+//  var headline: String
   var image: String
   var instructions: [String]
-  var notes: [String]
+//  var notes: [String]
 }

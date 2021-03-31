@@ -11,8 +11,12 @@ import SwiftUI
 struct ResourcesView: View {
     // MARK: - PROPERTIES
 
-    var recipes: [Goals] = goalData
-    
+    var overall_resources: [Resources] = mentalHealthResources
+    var d_resources: [Resources] = depressionResources
+    var a_resources: [Resources] = anxietyResources
+    var cb_resources: [Resources] = cyberbullyingResources
+    var bd_resources: [Resources] = bodyDysmorphiaResources
+
     var body: some View {
       
       ScrollView(.vertical, showsIndicators: false) {
@@ -42,8 +46,8 @@ struct ResourcesView: View {
               ScrollView(.horizontal, showsIndicators: false) {
                   HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
                       
-                  ForEach(recipes) { item in
-                    ResourcesBookView(recipe: item)
+                  ForEach(overall_resources) { item in
+                    MentalHealthBookView(resource: item)
                       .frame(width: 120, height: 220)
                       .environment(\.colorScheme, .dark)
 
@@ -65,8 +69,8 @@ struct ResourcesView: View {
               ScrollView(.horizontal, showsIndicators: false) {
                   HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
                       
-                  ForEach(recipes) { item in
-                    ResourcesBookView(recipe: item)
+                  ForEach(d_resources) { item in
+                    MentalHealthBookView(resource: item)
                       .frame(width: 120, height: 220)
                       .environment(\.colorScheme, .dark)
 
@@ -86,8 +90,8 @@ struct ResourcesView: View {
               ScrollView(.horizontal, showsIndicators: false) {
                   HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
                       
-                  ForEach(recipes) { item in
-                    ResourcesBookView(recipe: item)
+                  ForEach(a_resources) { item in
+                    MentalHealthBookView(resource: item)
                       .frame(width: 120, height: 220)
                       .environment(\.colorScheme, .dark)
 
@@ -108,8 +112,8 @@ struct ResourcesView: View {
               ScrollView(.horizontal, showsIndicators: false) {
                   HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
                       
-                  ForEach(recipes) { item in
-                    ResourcesBookView(recipe: item)
+                  ForEach(cb_resources) { item in
+                    MentalHealthBookView(resource: item)
                       .frame(width: 120, height: 220)
                       .environment(\.colorScheme, .dark)
 
@@ -131,8 +135,8 @@ struct ResourcesView: View {
               ScrollView(.horizontal, showsIndicators: false) {
                   HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
                       
-                  ForEach(recipes) { item in
-                    ResourcesBookView(recipe: item)
+                  ForEach(bd_resources) { item in
+                    MentalHealthBookView(resource: item)
                       .frame(width: 120, height: 220)
                       .environment(\.colorScheme, .dark)
 
@@ -143,30 +147,32 @@ struct ResourcesView: View {
           }
           .frame(maxWidth: 640)
           .padding([.top, .leading, .trailing])
+          .padding(.bottom, 85)
+
           
           // MARK: - FOOTER
           
-          VStack(alignment: .center, spacing: 20) {
-            Text("Resources")
-              .fontWeight(.bold)
-              .modifier(Goals_TitleModifier())
-            Text("You are always enough. You deserve the best.")
-              .font(.system(.body, design: .serif))
-              .multilineTextAlignment(.center)
-              .foregroundColor(Color.gray)
-              .frame(minHeight: 60)
-          }
-          .frame(maxWidth: 640)
-          .padding()
-          .padding(.bottom, 85)
+//          VStack(alignment: .center, spacing: 20) {
+//            Text("Resources")
+//              .fontWeight(.bold)
+//              .modifier(Resource_TitleModifier())
+//            Text("You are enough - always.")
+//              .font(.system(.body, design: .serif))
+//              .multilineTextAlignment(.center)
+//              .foregroundColor(Color.gray)
+//              .frame(minHeight: 60)
+//          }
+//          .frame(maxWidth: 640)
+//          .padding()
+//          .padding(.bottom, 85)
         }
       }
-      .edgesIgnoringSafeArea(.all)
-      .padding(0)
+//      .edgesIgnoringSafeArea(.all)
+//      .padding(0)
     }
   }
 
-  struct Goals_TitleModifier: ViewModifier {
+  struct Resource_TitleModifier: ViewModifier {
     func body(content: Content) -> some View {
       content
         .font(.system(.title, design: .serif))
@@ -182,3 +188,4 @@ struct ResourcesView: View {
 //      }
     }
   }
+
