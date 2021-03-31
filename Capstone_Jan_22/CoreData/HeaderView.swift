@@ -26,32 +26,31 @@ struct HeaderView: View {
         .resizable()
         .aspectRatio(contentMode: .fill)
       
-      HStack(alignment: .top, spacing: 0) {
+        HStack(alignment: .top, spacing: 0) {
         Rectangle()
-          .fill(Color("ColorGreenLight"))
-          .frame(width: 4)
+          .fill(Color("ColorBlueMedium"))
+          .frame(width: 5)
         
         VStack(alignment: .leading, spacing: 6) {
           Text(header.headline)
-            .font(.system(.title, design: .serif))
-            .fontWeight(.bold)
+            .font(.system(size: 12, weight: .bold, design: .serif))
             .foregroundColor(Color.white)
-            .shadow(radius: 3)
+            .shadow(radius: 2)
           
           Text(header.subheadline)
-            .font(.footnote)
-            .lineLimit(2)
+            .font(.system(size: 10, weight: .bold, design: .rounded))
+            .lineLimit(4)
             .multilineTextAlignment(.leading)
             .foregroundColor(Color.white)
-            .shadow(radius: 3)
+            .shadow(radius: 2)
         }
         .padding(.vertical, 0)
-        .padding(.horizontal, 20)
-        .frame(width: 281, height: 105)
-        .background(Color("ColorBlackTransparentLight"))
+        .padding(.horizontal, 5)
+        .frame(width: 281, height: 95).ignoresSafeArea()
+        .background(Color("ColorBlueTransparentLight"))
       }
-      .frame(width: 285, height: 105, alignment: .center)
-      .offset(x: -66, y: showHeadline ? 75 : 220)
+      .frame(width: 285, height: 95, alignment: .center)
+      .offset(x: -10, y: showHeadline ? 28 : 120).ignoresSafeArea()
       .animation(slideInAnimation)
       .onAppear(perform: {
         showHeadline = true
@@ -60,7 +59,7 @@ struct HeaderView: View {
         showHeadline = false
       })
     }
-    .frame(width: 480, height: 320, alignment: .center)
+    .frame(width: 480, height: 190, alignment: .center).ignoresSafeArea()
   }
 }
 

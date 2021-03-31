@@ -46,7 +46,17 @@ struct InstagramView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [Color("InstaColor1"), Color("InstaColor2"), Color("InstaColor3")]), startPoint: .top, endPoint: .bottom)).ignoresSafeArea()
+                Rectangle().foregroundColor(.clear)
+                    
+//                    .background(LinearGradient(gradient: Gradient(colors: [Color("InstaColor1"), Color("InstaColor2"), Color("InstaColor3")]), startPoint: .top, endPoint: .bottom)).ignoresSafeArea()
+                
+                    .background(
+                      Image("mountgraphicback")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    )
+                      .edgesIgnoringSafeArea(.all)
+
                 ScrollView{
                     
 //                    if userInfo.user.captions.count > 0 {
@@ -54,15 +64,17 @@ struct InstagramView: View {
 //                            Text(String(caption))
 //                        }
 //                    }
-                    Image("instagram_icon")
+                    Image("instagram_icon_bg")
                     .renderingMode(.original)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 100, height: 100)
                     HStack{
-                        Text("Step 1")
+                        Text("Step 1").fontWeight(.bold)
+                            .font(.system(.body, design: .serif)).padding()
+
                     }
-                    .padding(.top,25)
+                    .padding(.top,5)
                     Button(action: {
                         if self.testUserData.user_id == 0 {
                             self.presentAuth.toggle()
@@ -73,11 +85,11 @@ struct InstagramView: View {
                             }
                         }
                     }) {
-                    Text("Connect to your Instagram").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
+                        Text("Connect to your Instagram").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
                 
-                    }.background(Color("Color"))
+                    }.background(LinearGradient(gradient: Gradient(colors: [Color("ButtonColor1"), Color("ButtonColor2"), Color("ButtonColor3")]), startPoint: .top, endPoint: .bottom))
                     .clipShape(Capsule())
-                    .padding(.top,15)
+                    .padding(.top,5)
 //                    Button(action: { addItems() }) {
 //                        HStack {
 //                            Text("Add Selected Items")
@@ -85,7 +97,9 @@ struct InstagramView: View {
 //                    }
 //                    if self.testUserData.user_id != 0 {
                     HStack{
-                        Text("Step 2")
+                        Text("Step 2").fontWeight(.bold)
+                            .font(.system(.body, design: .serif)).padding()
+
                     }
                     Button(action: {
                         self.instagramApi.getInstagramUser(testUserData: self.testUserData) { (user) in
@@ -117,21 +131,24 @@ struct InstagramView: View {
                         }
                     }){
                         Text("Pull Instagram Captions").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
-                            .opacity((self.testUserData.user_id != 0) ? 1 : 0.75)
-                    }.disabled((self.testUserData.user_id == 0)).background(Color("Color"))
+                            .opacity((self.testUserData.user_id != 0) ? 1 : 0.85)
+                    }.disabled((self.testUserData.user_id == 0)).background(LinearGradient(gradient: Gradient(colors: [Color("ButtonColor1"), Color("ButtonColor2"), Color("ButtonColor3")]), startPoint: .top, endPoint: .bottom))
                     .clipShape(Capsule())
-                    .padding(.top,15)
-                    .opacity((self.testUserData.user_id != 0) ? 1 : 0.75)
+                    .padding(.top,5)
+                    .opacity((self.testUserData.user_id != 0) ? 1 : 0.85)
                     HStack{
-                        Text("Step 3")
+                        Text("Step 3").fontWeight(.bold)
+                            .font(.system(.body, design: .serif)).padding()
+//                            .modifier(TitleModifier())
+
                     }
                     Button(action: { fetchCaptions()}) {
                         AgeText.foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
-                            .opacity((userInfo.user.captions.count != 0 && selections.count != 0) ? 1 : 0.75)
-                    }.disabled((userInfo.user.captions.count == 0 && selections.count == 0)).background(Color("Color"))
+                            .opacity((userInfo.user.captions.count != 0 && selections.count != 0) ? 1 : 0.85)
+                    }.disabled((userInfo.user.captions.count == 0 && selections.count == 0)).background(LinearGradient(gradient: Gradient(colors: [Color("ButtonColor1"), Color("ButtonColor2"), Color("ButtonColor3")]), startPoint: .top, endPoint: .bottom))
                     .clipShape(Capsule())
-                    .padding(.top,15)
-                    .opacity((userInfo.user.captions.count != 0 && selections.count != 0) ? 1 : 0.75)
+                    .padding(.top,5)
+                    .opacity((userInfo.user.captions.count != 0 && selections.count != 0) ? 1 : 0.85)
 //                        }
                     Text(captionsAddedLabel)
                     }

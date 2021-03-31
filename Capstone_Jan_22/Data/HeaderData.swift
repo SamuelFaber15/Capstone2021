@@ -12,34 +12,53 @@ import SwiftUI
 
 let headersData: [Header] = [
   Header(
-    image: "avocado-slice-1",
-    headline: "Avocados",
-    subheadline: "Avocados are a powerhouse ingredient at any meal for anyone."
+    image: "try",
+    headline: """
+    Start where you are. Use what you have. Do what you can.
+    """,
+    subheadline: "  Arthur Ashe"
   ),
-  Header(
-    image: "avocado-slice-2",
-    headline: "Healthy",
-    subheadline: "Avocados are good for us and they can be part of our healthy diet."
+    Header(
+    image: "try",
+    headline: """
+    Just because no one else can heal or do your inner work for you, doesn't mean you can, should or need to do it alone.
+    """,
+    subheadline: "  ~ Lisa Olivera"
   ),
-  Header(
-    image: "avocado-slice-3",
-    headline: "Nutrients",
-    subheadline: "Avocados have a surprising amount and diversity of vitamins and minerals."
-  ),
-  Header(
-    image: "avocado-slice-4",
-    headline: "Delicious",
-    subheadline: "Craving more guacamole? Find the best guacamole recipes in the app."
-  ),
-  Header(
-    image: "avocado-slice-5",
-    headline: "Tasty",
-    subheadline: "Avocados are a good source of natural fiber, which making you feel full."
-  ),
-  Header(
-    image: "avocado-slice-6",
-    headline: "Recipes",
-    subheadline: "Enjoy these carefully handpicked avocado recipes for every occasion!"
-  )
+    Header(
+      image: "try",
+      headline: """
+      "Just because you don’t understand it doesn’t mean it isn’t so."
+      """,
+      subheadline: "    ~ Lemony Snicket"
+    ),
+    Header(
+      image: "try",
+      headline: """
+      "Courage doesn't always roar. Sometimes courage is the quiet voice at the end of the day saying, 'I will try again tomorrow.'"
+      """,
+      subheadline: "    ~ Mary Anne Radmacher."
+    ),
+    Header(
+      image: "try",
+      headline: """
+      "There is a crack in everything, that’s how the light gets in"
+      """,
+      subheadline: "    ~ Leonard Cohen."
+    ),
+        Header(
+      image: "try",
+      headline: """
+      "Anything that’s human is mentionable, and anything that is mentionable can be more manageable. When we can talk about our feelings, they become less scary, less upsetting, and less overwhelming."
+      """,
+      subheadline: "    ~ Fred Rogers"
+    ),
+    Header(
+      image: "try",
+      headline: """
+      "Mental health problems don’t define who you are. They are something you experience. You walk in the rain and you feel the rain, but... YOU ARE NOT THE RAIN"
+      """,
+      subheadline: "    ~ Matt Haig"
+    )
 ]
 

@@ -9,15 +9,15 @@ import SwiftUI
 
 let quotesData: [Quotes] = [
     Quotes(
-    image: "avocado-fact-1",
-    content: "Being self-aware is not the absence of mistakes, but the ability to learn and correct them. - Danile Chidiac"
+    image: "HTWF",
+    content: "Planning Goals is a KEY plan for self-improvement. Swipe left for additional encouragement in your pursuits."
   ),
     Quotes(
-    image: "avocado-fact-2",
-    content: "It’s little wonder there are so many health benefits when a single serve of avocado (1/4 or 50g) boasts healthy fats, fibre, folate, niacin, vitamins C, B5, E & K, potassium and antioxidants."
+    image: "7Habits",
+    content: "You are doing better than you think you are."
   ),
     Quotes(
-    image: "avocado-fact-3",
+    image: "mountainback",
     content: "The size of an avocado does not indicate the fruit quality or stage of ripeness. Avocado’s seed actually grows with the fruit, so the seed-to-fruit ratio will always be close to the same."
   ),
     Quotes(

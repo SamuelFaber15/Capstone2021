@@ -13,33 +13,99 @@ import SwiftUI
 
 let mentalHealthResources: [Resources] = [
     Resources(
-    title: "The Depression Workbook for Teens",
+    title: "Maybe You Should Talk to Someone",
 //    headline: "GOAL TEST",
-    image: "AnxietyRelief",
+    image: "overall_1",
     instructions: [
-      "The Depression Workbook for Teens gives you the helping hand you need to get through this difficult time. This depression workbook draws on the most effective and up-to-date techniques, like cognitive behavioral therapy and mindfulness, to deliver simple exercises that help teens learn how to conquer depression"
+      "One day, Lori Gottlieb is a therapist who helps patients in her Los Angeles practice. The next, a crisis causes her world to come crashing down. Enter Wendell, the quirky but seasoned therapist in whose of­fice she suddenly lands. With his balding head, cardigan, and khakis, he seems to have come straight from Therapist Central Casting. Yet he will turn out to be anything but.",
+        "As Gottlieb explores the inner chambers of her patients' lives -- a self-absorbed Hollywood producer, a young newlywed diagnosed with a terminal illness, a senior citizen threatening to end her life on her birthday if nothing gets better, and a twenty-something who can't stop hooking up with the wrong guys -- she finds that the questions they are struggling with are the very ones she is now bringing to Wendell.",
+        "With startling wisdom and humor, Gottlieb invites us into her world as both clinician and patient, examining the truths and fictions we tell ourselves and others as we teeter on the tightrope between love and desire, meaning and mortality, guilt and redemption, terror and courage, hope and change.",
+        "Maybe You Should Talk to Someone is rev­olutionary in its candor, offering a deeply per­sonal yet universal tour of our hearts and minds and providing the rarest of gifts: a boldly reveal­ing portrait of what it means to be human, and a disarmingly funny and illuminating account of our own mysterious lives and our power to transform them."
 //    ],
 //    notes: [
 //      "GOAL TEST"
     ]
   ),
     Resources(
-    title: "The Depression Workbook for Teens",
+    title: "How to be Fine",
+//    headline: "GOAL TEST",
+    image: "overall_2",
+    instructions: [
+        "In each episode of their podcast By the Book, Jolenta Greenberg and Kristen Meinzer take a deep dive into a different self-help book, following its specific instructions, rules, and advice to the letter. From diet and productivity to decorating to social interactions, they try it all, record themselves along the way, then share what they’ve learned with their devoted and growing audience of fans who tune in.",
+          "Before they began their podcast, Jolenta wanted to believe the promises of self-help books, while Kristen was very much the skeptic. They embraced their differences of opinion, hoping they’d be good for laughs and downloads. But in the years since launching the By the Book, they’ve come to realize their show is about much more than humor. In fact, reading and following each book’s advice has actually changed and improved their lives. Thanks to the show, Kristen penned the Amish romance novel she’d always joked about writing, traveled back to her past lives, and she broached some difficult conversations with her husband about their marriage. Jolenta finally memorized her husband’s phone number, began tracking her finances, and fell in love with cutting clutter.",
+          "Part memoir, part prescriptive handbook, this honest, funny, and heartfelt guide is like a warm soul-baring conversation with your closest and smartest friends."
+//    ],
+//    notes: [
+//      "GOAL TEST"
+    ]
+  ),
+    Resources(
+    title: "Girl Stop Apologizing",
+//    headline: "GOAL TEST",
+    image: "overall_3",
+    instructions: [
+        "In Girl, Stop Apologizing, #1 New York Times bestselling author and founder of a multimillion-dollar media company, Rachel Hollis sounds a wake-up call. She knows that many women have been taught to define themselves in light of other people—whether as wife, mother, daughter, or employee—instead of learning how to own who they are and what they want. With a challenge to women everywhere to stop talking themselves out of their dreams, Hollis identifies the excuses to let go of, the behaviors to adopt, and the skills to acquire on the path to growth, confidence, and believing in yourself."
+//    ],
+//    notes: [
+//      "GOAL TEST"
+    ]
+  ),
+    Resources(
+    title: "The Seven Habits of Highly Effective Teens",
 //    headline: "GOAL TEST",
     image: "7Habits",
     instructions: [
-      "The Depression Workbook for Teens gives you the helping hand you need to get through this difficult time. This depression workbook draws on the most effective and up-to-date techniques, like cognitive behavioral therapy and mindfulness, to deliver simple exercises that help teens learn how to conquer depression"
+      "Imagine you had a roadmap—a step-by-step guide to help you get from where you are now, to where you want to be in the future. Your goals, your dreams, your plans…they’re all within reach. You just need the tools to help you get there.",
+        "That’s what Sean Covey’s landmark book, The 7 Habits of Highly Effective Teens, has been to millions of teens: a handbook to self-esteem and success. Now updated for the digital age, this classic book applies the timeless principles of 7 Habits to the tough issues and life-changing decisions teens face. Covey provides a simple approach to help teens improve self-image, build friendships, resist peer pressure, achieve their goals, and appreciate their parents, as well as tackle the new challenges of our time, like cyberbullying and social media. In addition, this book is stuffed with cartoons, clever ideas, great quotes, and incredible stories about real teens from all over the world.",
+        "Endorsed by high-achievers such as former 49ers quarterback Steve Young and 28-time Olympic medalist Michael Phelps, The 7 Habits of Highly Effective Teens has become the last word on surviving and thriving as a teen."
 //    ],
 //    notes: [
 //      "GOAL TEST"
     ]
   ),
     Resources(
-    title: "The Depression Workbook for Teens",
+    title: "How to Win Friends and Influence People",
 //    headline: "GOAL TEST",
     image: "HTWF",
     instructions: [
-      "The Depression Workbook for Teens gives you the helping hand you need to get through this difficult time. This depression workbook draws on the most effective and up-to-date techniques, like cognitive behavioral therapy and mindfulness, to deliver simple exercises that help teens learn how to conquer depression"
+        "Since its release in 1936, How to Win Friends and Influence People has sold more than 15 million copies. Dale Carnegie's first book is a timeless bestseller, packed with rock-solid advice that has carried thousands of now famous people up the ladder of success in their business and personal lives.",
+        "Learn the six ways to make people like you, the twelve ways to win people to your way of thinking, and the nine ways to change people without arousing resentment."
+//    ],
+//    notes: [
+//      "GOAL TEST"
+    ]
+  ),
+    Resources(
+    title: "The Mind is Just Like a Muscle",
+//    headline: "GOAL TEST",
+    image: "overall_4",
+    instructions: [
+        "We live in a crazy time. On top of that, you’re trying to figure out who you are and how to find your place in this ever-changing world. You’re building your plane while flying it. The Mind Is Just Like A Muscle is a self-help book for teens that makes this daunting task not as intimidating. Through examples from science, history, and psychology, you learn about the unique qualities that make us human and how those qualities act as a filter for our experiences growing up in modern America. You learn why things - people, places, ideas - that aren’t familiar to us can feel scary or create fear. You build awareness around how our brains shape our experiences, and how the increasing interconnectedness of the modern era in turn affects us on an individual level and on a societal level. This book encourages you to exercise your brain by building awareness of your life both inside and outside your household. Like any other muscle, the human brain needs exercise to get stronger. This book shares exercises and insights to help you make that happen."
+//    ],
+//    notes: [
+//      "GOAL TEST"
+    ]
+  ),
+    Resources(
+    title: "Girl Wash Your Face",
+//    headline: "GOAL TEST",
+    image: "overall_5",
+    instructions: [
+        """
+Do you ever suspect that everyone else has life figured out and you don’t have a clue? If so, Rachel Hollis has something to tell you: that’s a lie.
+        
+If you have ever said any of these things to yourself . . .
+
+- Something else will make me happy.
+- I’m not a good mom.
+- I will never get past this.
+- I am defined by my weight.
+- I should be further along by now.
+
+. . . then you could benefit from the unflinching faith and rock-hard tenacity Rachel Hollis has in store for you. In this challenging but conversational book, Rachel exposes the twenty lies and misconceptions that too often hold us back from living joyfully and productively, lies we’ve told ourselves so often we don’t even hear them anymore.
+""",
+
+"Rachel is real and talks about real issues. More than that, she reveals the specific practical strategies that helped her move past them. In the process, she encourages, entertains, and even kicks a little butt, all to convince you to do whatever it takes to get real and become the joyous, confident woman you were meant to be. Because you really can live with passion and hustle – and give yourself grace without giving up."
 //    ],
 //    notes: [
 //      "GOAL TEST"
@@ -122,7 +188,25 @@ let anxietyResources: [Resources] = [
 //    notes: [
 //      "GOAL TEST"
     ]
+  ),
+    Resources(
+    title: "Anxiety Relief for Teens",
+//    headline: "GOAL TEST",
+    image: "AnxietyRelief",
+    instructions: [
+      "Getting good grades, keeping up with social media, maintaining friendships... you have a lot on your plate and it's more difficult when you add anxiety to the mix. You may even be avoiding situations, events, or people that could trigger your anxiety. So, how do you stop yourself from missing out on life? With Anxiety Relief for Teens, Dr. Regine Galanti teaches you how CBT-based skills and mindfulness techniques can help you manage your anxiety and reverse negative patterns. Through simple and effective exercises that help you change your thoughts, behaviors, and physical reactions, this helpful guide gives you the tools you need to navigate all of life's challenges.",
+        "Anxiety Relief for Teens features:",
+        """
+•  Quizzes and self-assessments to better understand your anxiety and emotions and discover their respective triggers.
+• 30+ CBT-based tools to manage your anxiety along with practical strategies for dealing with challenging emotions such as anger and sadness.
+•  30+ mindfulness practices to cope with your anxiety in the present moment through visualizations, breathing, meditation, and other exercises.
+"""
+//    ],
+//    notes: [
+//      "GOAL TEST"
+    ]
   )
+
 ]
 
 let cyberbullyingResources: [Resources] = [

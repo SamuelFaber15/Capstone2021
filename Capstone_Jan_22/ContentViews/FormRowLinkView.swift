@@ -36,6 +36,7 @@ struct FormRowLinkView: View {
       Button(action: {
         // OPEN A LINK
         guard let url = URL(string: self.link), UIApplication.shared.canOpenURL(url) else {
+
           return
         }
         UIApplication.shared.open(url as URL)
@@ -47,6 +48,7 @@ struct FormRowLinkView: View {
     }
   }
 }
+
 
 // MARK: - PREVIEW
 

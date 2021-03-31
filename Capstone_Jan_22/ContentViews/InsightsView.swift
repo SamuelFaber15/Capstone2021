@@ -69,7 +69,7 @@ struct InsightsView: View {
       } else if userInfo.user.captions.count == 0 {
         
         NavigationLink(destination: InstagramView()) {
-        Image("instagram_icon")
+        Image("instagram_icon_green")
             .renderingMode(.original)
             .resizable()
             .scaledToFill()

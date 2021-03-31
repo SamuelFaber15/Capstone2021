@@ -13,33 +13,34 @@ struct AppView: View {
     TabView(selection: $currentTab) {
         ResourcesView()
           .tabItem({
-            Image("tabicon-avocado")
+            Image("tabicon-resources2")
             Text("Resources")
           })
             .tag(1)
         InsightsView()
           .tabItem({
-            Image("tabicon-book")
+            Image("tabicon-insights2")
             Text("Insights")
           })
             .tag(2)
 //        WelcomeView()
         HomeView_Looping()
           .tabItem({
-            Image("tabicon-settings")
+            Image("tabicon-home2")
             Text("Home")
           })
             .tag(3)
 
-        GoalsView()
-          .tabItem({
-            Image("tabicon-avocado")
+//        GoalsView()
+        GoalsView_Tut(coreDM: CoreDataManager())
+            .tabItem({
+            Image("tabicon-goals2")
             Text("Goals")
           })
             .tag(4)
         SettingsView()
           .tabItem({
-            Image("tabicon-settings")
+            Image("tabicon-settings3")
             Text("Settings")
           })
             .tag(5)

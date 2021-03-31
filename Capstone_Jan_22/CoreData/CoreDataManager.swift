@@ -20,18 +20,7 @@ class CoreDataManager {
         }
     }
 
-
-//
-////    func updateGoal() {
-////
-////        do {
-////            try persistentContainer.viewContext.save()
-////        } catch {
-////            persistentContainer.viewContext.rollback()
-////        }
-////    }
-
-
+    
     func deleteGoal(goal: Goal) {
         persistentContainer.viewContext.delete(goal)
 

@@ -99,10 +99,14 @@ struct SettingsView: View {
         // MARK: - SECTION 3
         
         Section(header: Text("Immediate Resources")) {
-          FormRowLinkView(icon: "icon-facebook", color: Color.pink, text: "Website", link: "https://swiftuimasterclass.com")
-          FormRowLinkView(icon: "icon-facebook", color: Color.blue, text: "Twitter", link: "https://twitter.com/robertpetras")
-          FormRowLinkView(icon: "icon-facebook", color: Color.green, text: "Courses", link: "https://www.udemy.com/user/robert-petras")
+          FormRowLinkView(icon: "icon-facebook", color: Color.yellow, text: "National Suicide Hotline", link: "https://suicidepreventionlifeline.org/help-yourself/youth/")
+          FormRowLinkView(icon: "icon-facebook", color: Color.blue, text: "Crisis Textline", link: "https://www.crisistextline.org/")
+          FormRowLinkView(icon: "icon-facebook", color: Color.green, text: "National Alliance on Mental Illness", link: "https://www.nami.org/home")
         }
+        
+        //Example of phone link?
+        Link("Call National Suicide Hotline", destination: URL(string: "tel:8005551212")!)
+
           .padding(.vertical, 3)
 
       }
