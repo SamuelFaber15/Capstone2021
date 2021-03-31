@@ -19,7 +19,7 @@ struct SignUpView: View {
             VStack {
                 Group {
                     VStack(alignment: .leading) {
-                        TextField("Full Name", text: self.$user.fullname).autocapitalization(.words)
+                        TextField("Full Name", text: self.$user.fullname).autocapitalization(.words).padding(.top, 50)
                         if !user.validNameText.isEmpty {
                             Text(user.validNameText).font(.caption).foregroundColor(.red)
                         }
@@ -61,11 +61,9 @@ struct SignUpView: View {
                         }
                     }) {
                         Text("Register").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
-                            .opacity(user.isSignUpComplete ? 1 : 0.75)
-                    }.background(Color("Color"))
+                    }.background(LinearGradient(gradient: Gradient(colors: [Color("ButtonColor1"), Color("ButtonColor2"), Color("ButtonColor3")]), startPoint: .top, endPoint: .bottom))
                     .clipShape(Capsule())
                     .padding(.top,45)
-                    .opacity(user.loginIsComplete ? 1 : 0.75)
                     .disabled(!user.isSignUpComplete)
                     Spacer()
                 }.padding()

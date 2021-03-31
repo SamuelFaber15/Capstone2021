@@ -17,7 +17,7 @@ struct ForgotPasswordView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Enter email address", text: $user.email).autocapitalization(.none).keyboardType(.emailAddress)
+                TextField("Enter email address", text: $user.email).autocapitalization(.none).keyboardType(.emailAddress).padding(.top,50)
                 Button(action: {
                     FBAuth.resetPassword(email: self.user.email) { (result) in
                         switch result {
@@ -30,25 +30,23 @@ struct ForgotPasswordView: View {
                     }
                 }) {
                     Text("Reset").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
-                        .opacity(user.isEmailValid(_email: user.email) ? 1 : 0.75)
                 }
                 .disabled(!user.isEmailValid(_email: user.email))
-                .background(Color("Color"))
+                .background(LinearGradient(gradient: Gradient(colors: [Color("ButtonColor1"), Color("ButtonColor2"), Color("ButtonColor3")]), startPoint: .top, endPoint: .bottom))
                 .clipShape(Capsule())
                 .padding(.top,45)
-                .opacity(user.loginIsComplete ? 1 : 0.75)
                 
                 Spacer()
             }.padding(.top)
             .frame(width: 300)
             .textFieldStyle(RoundedBorderTextFieldStyle())
-            .navigationBarTitle("Request a password reset", displayMode: .inline)
+            .navigationBarTitle("Request a Password Reset", displayMode: .inline)
             .navigationBarItems(trailing: Button("Dismiss") {
                 self.presentationMode.wrappedValue.dismiss()
             })
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Password Reset"),
-                      message: Text(self.errString ?? "Success. Reset email sent successfully. Check your email"),
+                      message: Text(self.errString ?? "Success. Reset email sent successfully. Please check your email."),
                       dismissButton: .default(Text("Ok")) {
                         self.presentationMode.wrappedValue.dismiss()
                       })
@@ -56,6 +54,7 @@ struct ForgotPasswordView: View {
         }
     }
 }
+
 
 
 // OLD CODE!! Keeping in here just for reference for now (1/27). Will likely delete.

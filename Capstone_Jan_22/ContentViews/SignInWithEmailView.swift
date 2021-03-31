@@ -21,14 +21,16 @@ struct SignInWithEmailView: View {
 //            Color("HomeColor")
 //                .ignoresSafeArea()
             
-            Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [Color("HomeColor2"), Color("HomeColor")]), startPoint: .topLeading, endPoint: .bottomTrailing)).ignoresSafeArea()
-            
+//            Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [Color("Background_Email"), Color("Background_Email")]), startPoint: .topLeading, endPoint: .bottomTrailing)).ignoresSafeArea()
+            Image("backgroundimage").resizable()
+                .aspectRatio(contentMode: .fill).ignoresSafeArea()
+
         VStack{
-            Image("HomeImage")
+            Image("logo2")
                 .resizable()
-                .frame(width: 200.0, height: 200.0)
-            Text("SideKick").font(.largeTitle)
-                .multilineTextAlignment(.center)
+                .frame(width: 200.0, height: 280.0).padding(.bottom, 30)
+//            Text("SideKick").font(.largeTitle)
+//                .multilineTextAlignment(.center)
 
         
         VStack {
@@ -60,11 +62,12 @@ struct SignInWithEmailView: View {
                 }){
                     Text("Login").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
                         .opacity(user.loginIsComplete ? 1 : 0.75)
-                }.disabled(!user.loginIsComplete).background(Color("Color"))
+                }.disabled(!user.loginIsComplete)              .background(LinearGradient(gradient: Gradient(colors: [Color("ButtonColor1"), Color("ButtonColor2"), Color("ButtonColor3")]), startPoint: .top, endPoint: .bottom))
+
                 .clipShape(Capsule())
                 .padding(.top,45)
                 .opacity(user.loginIsComplete ? 1 : 0.75)
-                
+                                
                 HStack{
                     Text("Don't Have An Account?").foregroundColor(Color.black.opacity(0.5))
                 Button(action: {
