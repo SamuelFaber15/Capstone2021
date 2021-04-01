@@ -17,17 +17,7 @@ struct LoginView: View {
     var body: some View {
         VStack {
             SignInWithEmailView(showSheet: $showSheet, action: $action)
-//            SignInWithAppleView().frame(width: 200, height: 50)
         }
-        
-        // Seperate view, called by .sheet
-            .sheet(isPresented: $showSheet) {
-                if self.action == .signUp {
-                    SignUpView()
-                } else {
-                    ForgotPasswordView()
-                }
-            }
     }
 }
 

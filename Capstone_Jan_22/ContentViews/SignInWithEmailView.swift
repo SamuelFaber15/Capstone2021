@@ -7,8 +7,15 @@
 //
 
 import SwiftUI
-
+enum ActiveSheet: Identifiable {
+    case first, second
+    
+    var id: Int {
+        hashValue
+    }
+}
 struct SignInWithEmailView: View {
+    @State var activeSheet: ActiveSheet?
     @EnvironmentObject var userInfo: UserInfo
     @State var user: UserViewModel = UserViewModel()
     @Binding var showSheet: Bool
@@ -18,10 +25,6 @@ struct SignInWithEmailView: View {
     @State private var authError: EmailAuthError?
     var body: some View {
         ZStack{
-//            Color("HomeColor")
-//                .ignoresSafeArea()
-            
-//            Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [Color("Background_Email"), Color("Background_Email")]), startPoint: .topLeading, endPoint: .bottomTrailing)).ignoresSafeArea()
             Image("backgroundimage").resizable()
                 .aspectRatio(contentMode: .fill).ignoresSafeArea()
 
@@ -29,8 +32,6 @@ struct SignInWithEmailView: View {
             Image("logo2")
                 .resizable()
                 .frame(width: 200.0, height: 280.0).padding(.bottom, 30)
-//            Text("SideKick").font(.largeTitle)
-//                .multilineTextAlignment(.center)
 
         
         VStack {
@@ -41,8 +42,7 @@ struct SignInWithEmailView: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    self.action = .resetPW
-                    self.showSheet = true
+                    activeSheet = .first
                 }){
                     Text("Forgot Password?")
                 }
@@ -71,8 +71,7 @@ struct SignInWithEmailView: View {
                 HStack{
                     Text("Don't Have An Account?").foregroundColor(Color.black.opacity(0.5))
                 Button(action: {
-                    self.action = .signUp
-                    self.showSheet = true
+                    activeSheet = .second
                 }) {
                     Text("Sign Up")
                 }
@@ -94,6 +93,14 @@ struct SignInWithEmailView: View {
         .textFieldStyle(RoundedBorderTextFieldStyle())
     }
     }
+        .sheet(item: $activeSheet) { item in
+            switch item {
+            case .first:
+                ForgotPasswordView()
+            case .second:
+                SignUpView()
+            }
+        }
     }
 }
 
