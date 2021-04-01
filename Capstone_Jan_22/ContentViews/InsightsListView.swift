@@ -13,8 +13,13 @@ struct InsightsListView: View {
     var recipe: Recipe
     var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
     @State private var showModal: Bool = false
+    @EnvironmentObject var userInfo: UserInfo
     
     var body: some View {
+        let numberFormatter = NumberFormatter()
+        let number = numberFormatter.number(from: userInfo.user.score)
+        let numberFloatValue = number!.intValue
+        if recipe.scoreLow < numberFloatValue && numberFloatValue < recipe.scoreHigh {
       VStack(alignment: .leading, spacing: 0) {
         // CARD IMAGE
         Image(recipe.image)
@@ -70,6 +75,7 @@ struct InsightsListView: View {
       .sheet(isPresented: self.$showModal) {
         InsightsListDetailView(recipe: self.recipe)
       }
+    }
     }
   }
 

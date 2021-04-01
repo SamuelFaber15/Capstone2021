@@ -16,4 +16,6 @@ struct Recipe: Identifiable {
   var image: String
   var tips: [String]
   var content: [String]
+  var scoreLow: Int
+  var scoreHigh: Int
 }

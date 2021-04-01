@@ -23,7 +23,9 @@ let recipesData: [Recipe] = [
     ],
     content: [
       "Has someone been treating you unkindly recently? This can be a painful experience. As well, knowing how to deal with bullies can seem intimidating. If you'd like, try and review the following steps, to see if any might help with your current situation."
-    ]
+    ],
+    scoreLow: -100,
+    scoreHigh: 0
   ),
   Recipe(
     title: "March 6, 2021",
@@ -38,7 +40,9 @@ let recipesData: [Recipe] = [
     ],
     content: [
         "Has someone been treating you unkindly recently? This can be a painful experience. As well, knowing how to deal with bullies can seem intimidating. If you'd like, try and review the following steps, to see if any might help with your current situation."
-    ]
+    ],
+    scoreLow: 1,
+    scoreHigh: 49
   ),
   Recipe(
     title: "February 26, 2021",
@@ -53,6 +57,8 @@ let recipesData: [Recipe] = [
     ],
     content: [
         "Just a friendly reminder that you, Megan, are remarkable. No one else has tried living the life you are currently living - and you are one of a kind for that. Try and take time to remember how amazing you are this week."
-    ]
+    ],
+    scoreLow: 50,
+    scoreHigh: 100
   )
 ]
