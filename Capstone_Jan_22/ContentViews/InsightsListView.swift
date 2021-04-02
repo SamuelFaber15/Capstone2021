@@ -20,6 +20,8 @@ struct InsightsListView: View {
         let number = numberFormatter.number(from: userInfo.user.score)
         let numberFloatValue = number!.intValue
         if insight.scoreLow <= numberFloatValue && numberFloatValue <= insight.scoreHigh {
+          let headlineText = insight.headline.replacingOccurrences(of: "@User", with: userInfo.user.name)
+          let dateText = insight.title.replacingOccurrences(of: "@Date", with: userInfo.user.scoreDate)
       VStack(alignment: .leading, spacing: 0) {
         // CARD IMAGE
         Image(insight.image)
@@ -43,14 +45,13 @@ struct InsightsListView: View {
         
         VStack(alignment: .leading, spacing: 12) {
           // TITLE
-          Text(insight.title)
+          Text(dateText)
             .font(.system(.title, design: .serif))
             .fontWeight(.bold)
             .foregroundColor(Color("ColorGreenMedium"))
             .lineLimit(1)
           
           // HEADLINE
-            let headlineText = insight.headline.replacingOccurrences(of: "@User", with: userInfo.user.name)
           Text(headlineText)
             .font(.system(.body, design: .serif))
             .foregroundColor(Color.gray)
