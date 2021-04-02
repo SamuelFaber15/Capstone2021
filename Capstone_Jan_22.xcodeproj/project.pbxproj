@@ -18,6 +18,7 @@
 		0D0465DB261427450012DAC3 /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0465DA261427450012DAC3 /* QuotesView.swift */; };
 		0D0465E22614277A0012DAC3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0465E12614277A0012DAC3 /* HeaderView.swift */; };
 		0D0465E626142A1E0012DAC3 /* Home_Background_Final.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0D0465E526142A1E0012DAC3 /* Home_Background_Final.mov */; };
+		0D8593A22617787D0045AC06 /* AddGoalView_Tut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8593A12617787D0045AC06 /* AddGoalView_Tut.swift */; };
 		0D9AF00425D5C1A400E9E55F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D9AF00325D5C1A400E9E55F /* GoogleService-Info.plist */; };
 		6565DD96BBAD1D47974B8659 /* Pods_Capstone_Jan_22.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E271DC69AB2BB254FF2255 /* Pods_Capstone_Jan_22.framework */; };
 		FA06849325BB931500AB975A /* Capstone_Jan_22App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06849225BB931500AB975A /* Capstone_Jan_22App.swift */; };
@@ -79,6 +80,7 @@
 		0D0465DA261427450012DAC3 /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
 		0D0465E12614277A0012DAC3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0D0465E526142A1E0012DAC3 /* Home_Background_Final.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Home_Background_Final.mov; sourceTree = "<group>"; };
+		0D8593A12617787D0045AC06 /* AddGoalView_Tut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalView_Tut.swift; sourceTree = "<group>"; };
 		0D9AF00325D5C1A400E9E55F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13E271DC69AB2BB254FF2255 /* Pods_Capstone_Jan_22.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Capstone_Jan_22.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F82F6605733351DB70F1CA4 /* Pods-Capstone_Jan_22.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone_Jan_22.release.xcconfig"; path = "Target Support Files/Pods-Capstone_Jan_22/Pods-Capstone_Jan_22.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				0D0465C42614238D0012DAC3 /* GoalsView_Tut.swift */,
 				0D0465DA261427450012DAC3 /* QuotesView.swift */,
 				0D0465E12614277A0012DAC3 /* HeaderView.swift */,
+				0D8593A12617787D0045AC06 /* AddGoalView_Tut.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				FA860E4B26095DE400B2AFC1 /* InsightsModel.swift in Sources */,
 				FAA3E82B25D5D1E000DC85C1 /* InstagramView.swift in Sources */,
 				FA860E52260A863400B2AFC1 /* Todo_App.xcdatamodeld in Sources */,
+				0D8593A22617787D0045AC06 /* AddGoalView_Tut.swift in Sources */,
 				0D0465DB261427450012DAC3 /* QuotesView.swift in Sources */,
 				FAA3E82C25D5D1E000DC85C1 /* ForgotPasswordView.swift in Sources */,
 				FAA3E82F25D5D1E000DC85C1 /* SignInWithEmailView.swift in Sources */,

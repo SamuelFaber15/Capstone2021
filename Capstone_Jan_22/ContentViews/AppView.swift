@@ -33,6 +33,7 @@ struct AppView: View {
 
 //        GoalsView()
         GoalsView_Tut(coreDM: CoreDataManager())
+//        AddGoalView_Tut(coreDM: CoreDataManager())
             .tabItem({
             Image("tabicon-goals2")
             Text("Goals")

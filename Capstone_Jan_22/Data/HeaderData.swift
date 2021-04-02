@@ -14,17 +14,24 @@ let headersData: [Header] = [
   Header(
     image: "try",
     headline: """
-    Start where you are. Use what you have. Do what you can.
+    "Start where you are. Use what you have. Do what you can."
     """,
-    subheadline: "  Arthur Ashe"
+    subheadline: "  ~ Arthur Ashe"
   ),
     Header(
     image: "try",
     headline: """
-    Just because no one else can heal or do your inner work for you, doesn't mean you can, should or need to do it alone.
+    "Just because no one else can heal or do your inner work for you, doesn't mean you can, should or need to do it alone."
     """,
     subheadline: "  ~ Lisa Olivera"
   ),
+    Header(
+      image: "try",
+      headline: """
+      "There is a crack in everything, that’s how the light gets in"
+      """,
+      subheadline: "    ~ Leonard Cohen."
+    ),
     Header(
       image: "try",
       headline: """
@@ -39,13 +46,6 @@ let headersData: [Header] = [
       """,
       subheadline: "    ~ Mary Anne Radmacher."
     ),
-    Header(
-      image: "try",
-      headline: """
-      "There is a crack in everything, that’s how the light gets in"
-      """,
-      subheadline: "    ~ Leonard Cohen."
-    ),
         Header(
       image: "try",
       headline: """
@@ -56,7 +56,7 @@ let headersData: [Header] = [
     Header(
       image: "try",
       headline: """
-      "Mental health problems don’t define who you are. They are something you experience. You walk in the rain and you feel the rain, but, importantly, YOU ARE NOT THE RAIN"
+      "Mental health problems don’t define who you are. They are something you experience. You walk in the rain and you feel the rain, but, importantly, you are not the rain."
       """,
       subheadline: "    ~ Matt Haig"
     )
