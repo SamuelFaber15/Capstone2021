@@ -208,7 +208,6 @@ struct InstagramView: View {
                 }
             }
             updateUI(with: sentimentScore, predictionsCount: predictionCount)
-//            self.mode.wrappedValue.dismiss()
             self.captionsAddedLabel = "Success! Click back to check out your Inisghts!"
         } catch{
             print("There was an error w/ making a prediction, \(error)")
@@ -216,6 +215,22 @@ struct InstagramView: View {
     }
     
     func updateUI(with sentimentScore: Int, predictionsCount: Int) {
+        // Create Date
+        let date = Date()
+
+        // Create Date Formatter
+        let dateFormatter = DateFormatter()
+
+        // Set Date/Time Style
+        dateFormatter.dateStyle = .long
+//        dateFormatter.timeStyle = .short
+
+        // Set Locale
+//        dateFormatter.locale = Locale(identifier: "fr")
+
+        // Convert Date to String
+        let currentScoreDate = dateFormatter.string(from: date) // 9 septembre 2020 à 12:27
+        
         print("7834")
         print(predictionsCount)
         let percentageNum = round(((Double(sentimentScore) / Double(predictionsCount))*100))
@@ -225,6 +240,7 @@ struct InstagramView: View {
         print("***here***")
         print(percentageNum)
         db.collection("users").document(self.userInfo.user.uid).updateData(["score": String(percentageNum)])
+        db.collection("users").document(self.userInfo.user.uid).updateData(["scoreDate": String(currentScoreDate)])
         self.userInfo.configureFirebaseStateDidChange()
     }
     
