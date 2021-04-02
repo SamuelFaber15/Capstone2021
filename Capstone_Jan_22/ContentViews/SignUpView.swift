@@ -50,7 +50,8 @@ struct SignUpView: View {
                                           name: self.user.fullname,
                                           captions: [],
                                           password: self.user.password,
-                                          score: "") {( result) in
+                                          score: "",
+                                          scoreDate: "") {( result) in
                             switch result {
                             case .failure(let error):
                                 self.errorString = error.localizedDescription

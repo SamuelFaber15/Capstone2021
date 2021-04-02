@@ -14,15 +14,17 @@ struct FBUser {
     let email: String
     let captions: Array<Any>
     let score: String
+    let scoreDate: String
     
     // App Specific properties can be added here
     
-    init(uid: String, name: String, email: String, captions: Array<Any>, score: String) {
+    init(uid: String, name: String, email: String, captions: Array<Any>, score: String, scoreDate: String) {
         self.uid = uid
         self.name = name
         self.email = email
         self.captions = captions
         self.score = score
+        self.scoreDate = scoreDate
     }
 
 }
@@ -34,6 +36,7 @@ extension FBUser {
         let email = documentData[FBKeys.User.email] as? String ?? ""
         let captions = documentData[FBKeys.User.captions] as? Array<Any> ?? []
         let score = documentData[FBKeys.User.score] as? String ?? ""
+        let scoreDate = documentData[FBKeys.User.scoreDate] as? String ?? ""
         
         // Make sure you also initialize any app specific properties if you have them
 
@@ -42,12 +45,13 @@ extension FBUser {
                   name: name,
                   email: email,
                   captions: captions,
-                  score: score
+                  score: score,
+                  scoreDate: scoreDate
                   // Dont forget any app specific ones here too
         )
     }
     
-    static func dataDict(uid: String, name: String, email: String, captions: Array<Any>, score: String) -> [String: Any] {
+    static func dataDict(uid: String, name: String, email: String, captions: Array<Any>, score: String, scoreDate: String) -> [String: Any] {
         var data: [String: Any]
         
         // If name is not "" this must be a new entry so add all first time data
@@ -57,7 +61,8 @@ extension FBUser {
                 FBKeys.User.name: name,
                 FBKeys.User.email: email,
                 FBKeys.User.captions: captions,
-                FBKeys.User.score: score
+                FBKeys.User.score: score,
+                FBKeys.User.scoreDate: scoreDate
                 // Again, include any app specific properties that you want stored on creation
             ]
         } else {

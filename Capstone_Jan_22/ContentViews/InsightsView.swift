@@ -37,6 +37,7 @@ struct InsightsView: View {
     @State var sentimentLabel = ""
     
     var body: some View {
+        
         NavigationView{
       ScrollView(.vertical, showsIndicators: false) {
         if userInfo.user.score != "" {

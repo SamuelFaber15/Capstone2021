@@ -19,6 +19,7 @@ enum FBKeys {
         static let email = "email"
         static let captions = "captions"
         static let score = "score"
+        static let scoreDate = "scoreDate"
         
         // Add app specific keys here
     }
