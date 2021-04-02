@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AppView: View {
+    
+    @EnvironmentObject var userInfo: UserInfo
+    
     @State private var currentTab = 3
   var body: some View {
     TabView(selection: $currentTab) {

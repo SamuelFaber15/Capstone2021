@@ -37,14 +37,14 @@ struct InstagramView: View {
     
 //    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
-    init() {
-        UINavigationBar.appearance().barTintColor = .clear
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-    }
+//    init() {
+//        UINavigationBar.appearance().barTintColor = .clear
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+//    }
     
     //MARK:- View Body
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ZStack {
                 Rectangle().foregroundColor(.clear)
                     
@@ -123,6 +123,7 @@ struct InstagramView: View {
                                     print(post)
                                 }
                                 addItems()
+                                self.userInfo.configureFirebaseStateDidChange()
                             }
                                 
                         } else {
@@ -131,11 +132,12 @@ struct InstagramView: View {
                         }
                     }){
                         Text("Pull Instagram Captions").foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
-                            .opacity((self.testUserData.user_id != 0) ? 1 : 0.85)
+                            .opacity((self.testUserData.user_id != 0) ? 1 : 0.75)
                     }.disabled((self.testUserData.user_id == 0)).background(LinearGradient(gradient: Gradient(colors: [Color("ButtonColor1"), Color("ButtonColor2"), Color("ButtonColor3")]), startPoint: .top, endPoint: .bottom))
                     .clipShape(Capsule())
                     .padding(.top,5)
-                    .opacity((self.testUserData.user_id != 0) ? 1 : 0.85)
+                    .opacity((self.testUserData.user_id != 0) ? 1 : 0.75)
+                    
                     HStack{
                         Text("Step 3").fontWeight(.bold)
                             .font(.system(.body, design: .serif)).padding()
@@ -143,12 +145,12 @@ struct InstagramView: View {
 
                     }
                     Button(action: { fetchCaptions()}) {
-                        AgeText.foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
-                            .opacity((userInfo.user.captions.count != 0 && selections.count != 0) ? 1 : 0.85)
-                    }.disabled((userInfo.user.captions.count == 0 && selections.count == 0)).background(LinearGradient(gradient: Gradient(colors: [Color("ButtonColor1"), Color("ButtonColor2"), Color("ButtonColor3")]), startPoint: .top, endPoint: .bottom))
+                        AnalysisText.foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
+                            .opacity((userInfo.user.captions.count == 0 && selections.count == 0 || userInfo.user.captions.count != 0 && selections.count == 0 && userInfo.user.score != "") ? 0.75 : 1)
+                    }.disabled((userInfo.user.captions.count == 0 && selections.count == 0 || userInfo.user.captions.count != 0 && selections.count == 0 && userInfo.user.score != "")).background(LinearGradient(gradient: Gradient(colors: [Color("ButtonColor1"), Color("ButtonColor2"), Color("ButtonColor3")]), startPoint: .top, endPoint: .bottom))
                     .clipShape(Capsule())
                     .padding(.top,5)
-                    .opacity((userInfo.user.captions.count != 0 && selections.count != 0) ? 1 : 0.85)
+                    .opacity((userInfo.user.captions.count == 0 && selections.count == 0 || userInfo.user.captions.count != 0 && selections.count == 0 && userInfo.user.score != "") ? 0.75 : 1)
 //                        }
                     Text(captionsAddedLabel)
                     }
@@ -161,7 +163,7 @@ struct InstagramView: View {
                 return actionSheet
             }
         }
-    }
+//    }
     
     func addItems() {
         let db = Firestore.firestore()
@@ -172,9 +174,8 @@ struct InstagramView: View {
             self.captionsAddedLabel = "No captions added"
         }else{
             db.collection("users").document(self.userInfo.user.uid).updateData(["captions": FieldValue.arrayUnion(selections)])
-            self.userInfo.configureFirebaseStateDidChange()
-            self.captionsAddedLabel = String(selections.count) + " captions added! Re-Run the Analysis!"
-            print(String(selections.count) + " captions added")
+//            self.userInfo.configureFirebaseStateDidChange()
+            self.captionsAddedLabel = String(selections.count) + " captions added! Run the Analysis!"
         }
     }
     
@@ -208,6 +209,7 @@ struct InstagramView: View {
             }
             updateUI(with: sentimentScore, predictionsCount: predictionCount)
 //            self.mode.wrappedValue.dismiss()
+            self.captionsAddedLabel = "Success! Click back to check out your Inisghts!"
         } catch{
             print("There was an error w/ making a prediction, \(error)")
         }
@@ -226,7 +228,7 @@ struct InstagramView: View {
         self.userInfo.configureFirebaseStateDidChange()
     }
     
-    private var AgeText: some View {
+    private var AnalysisText: some View {
             if userInfo.user.score == "" {
                 return Text("Run Analysis")
             } else {

@@ -9,8 +9,8 @@ import SwiftUI
 
 // MARK: - RECIPE DATA
 
-let recipesData: [Recipe] = [
-  Recipe(
+let insightsData: [Insight] = [
+    Insight(
     title: "March 11, 2021",
     headline: "Hello, Megan! How are you feeling today?",
     image: "Landscape1",
@@ -27,7 +27,7 @@ let recipesData: [Recipe] = [
     scoreLow: -100,
     scoreHigh: 0
   ),
-  Recipe(
+    Insight(
     title: "March 6, 2021",
     headline: "How have your stress levels felt recently?",
     image: "Landscape2",
@@ -44,9 +44,9 @@ let recipesData: [Recipe] = [
     scoreLow: 1,
     scoreHigh: 49
   ),
-  Recipe(
+    Insight(
     title: "February 26, 2021",
-    headline: "Have you remembered to treat yourself this week?.",
+    headline: "@User, have you remembered to treat yourself this week?",
     image: "Landscape3",
     tips: [
         "Treat yourself to your favorite dessert this Friday!",
