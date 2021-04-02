@@ -10,7 +10,7 @@ import SwiftUI
 struct InsightsListView: View {
     // MARK: - PROPERTIES
     
-    var recipe: Recipe
+    var insight: Insight
     var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
     @State private var showModal: Bool = false
     @EnvironmentObject var userInfo: UserInfo
@@ -19,10 +19,10 @@ struct InsightsListView: View {
         let numberFormatter = NumberFormatter()
         let number = numberFormatter.number(from: userInfo.user.score)
         let numberFloatValue = number!.intValue
-        if recipe.scoreLow < numberFloatValue && numberFloatValue < recipe.scoreHigh {
+        if insight.scoreLow <= numberFloatValue && numberFloatValue <= insight.scoreHigh {
       VStack(alignment: .leading, spacing: 0) {
         // CARD IMAGE
-        Image(recipe.image)
+        Image(insight.image)
           .resizable()
           .scaledToFit()
           .overlay(
@@ -43,14 +43,15 @@ struct InsightsListView: View {
         
         VStack(alignment: .leading, spacing: 12) {
           // TITLE
-          Text(recipe.title)
+          Text(insight.title)
             .font(.system(.title, design: .serif))
             .fontWeight(.bold)
             .foregroundColor(Color("ColorGreenMedium"))
             .lineLimit(1)
           
           // HEADLINE
-          Text(recipe.headline)
+            let headlineText = insight.headline.replacingOccurrences(of: "@User", with: userInfo.user.name)
+          Text(headlineText)
             .font(.system(.body, design: .serif))
             .foregroundColor(Color.gray)
             .italic()
@@ -73,7 +74,7 @@ struct InsightsListView: View {
       }
       .padding(.top, 30)
       .sheet(isPresented: self.$showModal) {
-        InsightsListDetailView(recipe: self.recipe)
+        InsightsListDetailView(insight: self.insight)
       }
     }
     }
@@ -81,7 +82,7 @@ struct InsightsListView: View {
 
   struct InsightsListView_Previews: PreviewProvider {
     static var previews: some View {
-        InsightsListView(recipe: recipesData[0])
+        InsightsListView(insight: insightsData[0])
         .previewLayout(.sizeThatFits)
     }
   }

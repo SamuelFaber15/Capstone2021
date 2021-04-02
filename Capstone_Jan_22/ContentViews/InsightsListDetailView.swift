@@ -10,7 +10,7 @@ import SwiftUI
 struct InsightsListDetailView: View {
     // MARK: - PROPERTIES
     
-    var recipe: Recipe
+    var insight: Insight
     
     @State private var pulsate: Bool = false
     @Environment(\.presentationMode) var presentationMode
@@ -19,33 +19,26 @@ struct InsightsListDetailView: View {
       ScrollView(.vertical, showsIndicators: false) {
         VStack(alignment: .center, spacing: 0) {
           // IMAGE
-          Image(recipe.image)
+          Image(insight.image)
             .resizable()
             .scaledToFit()
           
           Group {
             // TITLE
-            Text(recipe.title)
+            Text(insight.title)
               .font(.title)
               .fontWeight(.semibold)
               .multilineTextAlignment(.center)
               .foregroundColor(Color("ColorGreenAdaptive"))
               .padding(.top, 10)
             
-            // RATING
-  //          RecipeRatingView(recipe: recipe)
-            
-            // COOKING
-  //          RecipeCookingView(recipe: recipe)
-            
-            // INGREDIENTS
               Text("Insights")
                   .font(.largeTitle)
               .fontWeight(.ultraLight)
               .modifier(TitleModifier())
             
             VStack(alignment: .leading, spacing: 5) {
-              ForEach(recipe.tips, id: \.self) { item in
+              ForEach(insight.tips, id: \.self) { item in
                 VStack(alignment: .leading, spacing: 5) {
                   Text(item)
                     .font(.footnote)
@@ -66,7 +59,7 @@ struct InsightsListDetailView: View {
               .fontWeight(.ultraLight)
               .modifier(TitleModifier())
             
-            ForEach(recipe.content, id: \.self) { item in
+            ForEach(insight.content, id: \.self) { item in
               VStack(alignment: .center, spacing: 5) {
                 Image(systemName: "chevron.down.circle")
                   .resizable()
@@ -119,6 +112,6 @@ struct InsightsListDetailView: View {
 
   struct InsightsListDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        InsightsListDetailView(recipe: recipesData[0])
+        InsightsListDetailView(insight: insightsData[0])
     }
   }

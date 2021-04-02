@@ -9,7 +9,7 @@ import SwiftUI
 
 // MARK: - RECIPE MODEL
 
-struct Recipe: Identifiable {
+struct Insight: Identifiable {
   var id = UUID()
   var title: String
   var headline: String

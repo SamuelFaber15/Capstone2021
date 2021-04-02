@@ -11,6 +11,8 @@ import AVFoundation
 
 
 struct HomeView_Looping: UIViewRepresentable {
+    
+    @EnvironmentObject var userInfo: UserInfo
     func makeUIView(context: Context) -> UIView {
         return QueuePlayerUIView(frame: .zero)
     }
