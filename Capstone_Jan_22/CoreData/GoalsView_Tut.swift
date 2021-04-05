@@ -73,7 +73,7 @@ struct GoalsView_Tut: View {
 //                    Text(goal.title ?? "")
 //                }
                 
-                Form{
+                List{
                     
                     ForEach(goals, id: \.self) {goal in
                         Text(goal.name ?? "")

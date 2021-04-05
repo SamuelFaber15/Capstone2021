@@ -38,7 +38,7 @@ struct InsightsListDetailView: View {
               .modifier(TitleModifier())
             
             VStack(alignment: .leading, spacing: 5) {
-              ForEach(insight.tips, id: \.self) { item in
+              ForEach(insight.content, id: \.self) { item in
                 VStack(alignment: .leading, spacing: 5) {
                   Text(item)
                     .font(.footnote)
@@ -59,7 +59,7 @@ struct InsightsListDetailView: View {
               .fontWeight(.ultraLight)
               .modifier(TitleModifier())
             
-            ForEach(insight.content, id: \.self) { item in
+            ForEach(insight.tips, id: \.self) { item in
               VStack(alignment: .center, spacing: 5) {
                 Image(systemName: "chevron.down.circle")
                   .resizable()

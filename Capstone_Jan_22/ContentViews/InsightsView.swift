@@ -54,10 +54,10 @@ struct InsightsView: View {
           // MARK: - FOOTER
           
           VStack(alignment: .center, spacing: 20) {
-            Text("All About YOU")
-              .fontWeight(.bold)
-              .modifier(TitleModifier())
-            Text("You are always enough. You deserve the best.")
+//            Text("Never Forget -")
+//              .fontWeight(.bold)
+//              .modifier(TitleModifier())
+            Text("Don't forget - you're doing better than you think you are.")
               .font(.system(.body, design: .serif))
               .multilineTextAlignment(.center)
               .foregroundColor(Color.gray)
