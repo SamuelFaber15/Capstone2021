@@ -27,21 +27,6 @@ struct InsightsListView: View {
         Image(insight.image)
           .resizable()
           .scaledToFit()
-          .overlay(
-            HStack {
-              Spacer()
-              VStack {
-                Image(systemName: "bookmark")
-                  .font(Font.title.weight(.light))
-                  .foregroundColor(Color.white)
-                  .imageScale(.small)
-                  .shadow(color: Color("ColorBlackTransparentLight"), radius: 2, x: 0, y: 0)
-                  .padding(.trailing, 20)
-                  .padding(.top, 22)
-                Spacer()
-              }
-            }
-          )
         
         VStack(alignment: .leading, spacing: 12) {
           // TITLE

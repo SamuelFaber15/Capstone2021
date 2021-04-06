@@ -69,16 +69,36 @@ struct InsightsView: View {
         }
       }
 //        else if userInfo.user.captions.count == 0 {
-        
+        if userInfo.user.captions.count == 0 {
+            VStack{
+            HStack(alignment: .top, spacing: 10) {
+            Text("Insights")
+              .font(.system(.title, design: .serif))
+              .fontWeight(.bold)
+              .foregroundColor(Color("ColorGreenMedium"))
+          }
+
+          VStack(alignment: .center, spacing: 5) {
+            Text("Our data model has been designed to give personalized feedback and insights for each user. When you connect to your instagram we will collect and analyze the captions of your posts and provide you with insights.")
+                .font(.system(.body, design: .serif))
+                .foregroundColor(Color.gray)
+                .italic()
+                .padding([.leading, .bottom, .trailing, .top])
+
+          }
+        }
+        }
         NavigationLink(destination: InstagramView()) {
             if userInfo.user.captions.count == 0 {
-        Image("instagram_icon_green")
-            .renderingMode(.original)
-            .resizable()
-            .scaledToFill()
-            .frame(width: 100, height: 100)
-        Text("Connect to your Instagram")
-            }
+                Image("instagram_icon_green")
+                    .renderingMode(.original)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 100, height: 100)
+                Text("Connect to your Instagram")
+                    .italic()
+                    .foregroundColor(Color.gray)
+              }
         }
         
         

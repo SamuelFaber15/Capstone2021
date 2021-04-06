@@ -23,11 +23,20 @@ struct ResourcesView: View {
         VStack(alignment: .center, spacing: 15) {
           // MARK: - HEADER
 
-          HStack(alignment: .top, spacing: 10) {
-                    
+            HStack(alignment: .top, spacing: 10) {
+            Text("Resources")
+              .font(.system(.title, design: .serif))
+              .fontWeight(.bold)
+              .foregroundColor(Color("ColorGreenMedium"))
           }
 
-          HStack(alignment: .center, spacing: 0) {
+          VStack(alignment: .center, spacing: 5) {
+            Text("Here are a few resources that we have found to be helpful for various challenges that we all might face. Click on each to see a short summary")
+                .font(.system(.body, design: .serif))
+                .foregroundColor(Color.gray)
+                .italic()
+                .padding([.leading, .bottom, .trailing])
+                .fixedSize(horizontal: false, vertical: true)
 
           }
           

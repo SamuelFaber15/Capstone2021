@@ -14,9 +14,11 @@ struct InsightsListDetailView: View {
     
     @State private var pulsate: Bool = false
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var userInfo: UserInfo
     
     var body: some View {
       ScrollView(.vertical, showsIndicators: false) {
+          let dateText = insight.title.replacingOccurrences(of: "@Date", with: userInfo.user.scoreDate)
         VStack(alignment: .center, spacing: 0) {
           // IMAGE
           Image(insight.image)
@@ -25,7 +27,7 @@ struct InsightsListDetailView: View {
           
           Group {
             // TITLE
-            Text(insight.title)
+            Text(dateText)
               .font(.title)
               .fontWeight(.semibold)
               .multilineTextAlignment(.center)
@@ -39,12 +41,14 @@ struct InsightsListDetailView: View {
             
             VStack(alignment: .leading, spacing: 5) {
               ForEach(insight.content, id: \.self) { item in
+                let contentText = item.replacingOccurrences(of: "@User", with: userInfo.user.name)
                 VStack(alignment: .leading, spacing: 5) {
-                  Text(item)
+                  Text(contentText)
                     .font(.footnote)
                       .fontWeight(.thin)
                       .multilineTextAlignment(.center)
                       .padding([.leading, .bottom, .trailing])
+                    .fixedSize(horizontal: false, vertical: true)
   //                Divider()
                 }
               }
@@ -60,6 +64,7 @@ struct InsightsListDetailView: View {
               .modifier(TitleModifier())
             
             ForEach(insight.tips, id: \.self) { item in
+            let tipsText = item.replacingOccurrences(of: "@User", with: userInfo.user.name)
               VStack(alignment: .center, spacing: 5) {
                 Image(systemName: "chevron.down.circle")
                   .resizable()
@@ -68,12 +73,13 @@ struct InsightsListDetailView: View {
                   .font(Font.title.weight(.ultraLight))
                   .foregroundColor(Color("ColorGreenAdaptive"))
                 
-                  Text(item)
+                  Text(tipsText)
                       .fontWeight(.thin)
                   .lineLimit(nil)
                   .multilineTextAlignment(.center)
                       .font(.body)
                   .frame(minHeight: 100)
+                    .fixedSize(horizontal: false, vertical: true)
               }
             }
           }
