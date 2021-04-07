@@ -38,7 +38,7 @@ struct ContentView: View {
 //                }
             } else if userInfo.isUserAuthenticated == .signedOut {
             // if not, takes them to login view
-                LoginView()
+                SignInWithEmailView()
             } else {
                 AppView()
             }

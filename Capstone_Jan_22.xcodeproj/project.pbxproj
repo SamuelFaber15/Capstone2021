@@ -613,7 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Capstone_Jan_22/Preview Content\"";
-				DEVELOPMENT_TEAM = H85HC8J2GD;
+				DEVELOPMENT_TEAM = 9KY6T2JGR2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Capstone_Jan_22/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -621,7 +621,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MentalHealthCapstone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MentalHealthCapstone1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -640,7 +640,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Capstone_Jan_22/Preview Content\"";
-				DEVELOPMENT_TEAM = H85HC8J2GD;
+				DEVELOPMENT_TEAM = 9KY6T2JGR2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Capstone_Jan_22/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -648,7 +648,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MentalHealthCapstone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MentalHealthCapstone1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

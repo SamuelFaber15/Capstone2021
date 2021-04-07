@@ -18,8 +18,8 @@ struct SignInWithEmailView: View {
     @State var activeSheet: ActiveSheet?
     @EnvironmentObject var userInfo: UserInfo
     @State var user: UserViewModel = UserViewModel()
-    @Binding var showSheet: Bool
-    @Binding var action:LoginView.Action?
+//    @Binding var showSheet: Bool
+//    @Binding var action:LoginView.Action?si
     
     @State private var showAlert = false
     @State private var authError: EmailAuthError?
@@ -107,8 +107,8 @@ struct SignInWithEmailView: View {
 
 // OLD CODE!! Keeping in here just for reference for now (1/27). Will likely delete.
 
-//struct SignInWithEmailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SignInWithEmailView()
-//    }
-//}
+struct SignInWithEmailView_Previews: PreviewProvider {
+    static var previews: some View {
+        SignInWithEmailView()
+    }
+}
