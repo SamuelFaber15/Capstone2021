@@ -70,6 +70,7 @@ struct InsightsListDetailView: View {
                   .resizable()
                   .frame(width: 42, height: 42, alignment: .center)
                   .imageScale(.large)
+                    .padding()
                   .font(Font.title.weight(.ultraLight))
                   .foregroundColor(Color("ColorGreenAdaptive"))
                 
