@@ -44,7 +44,7 @@ struct InsightsListDetailView: View {
                 let contentText = item.replacingOccurrences(of: "@User", with: userInfo.user.name)
                 VStack(alignment: .leading, spacing: 5) {
                   Text(contentText)
-                    .font(.footnote)
+                    .font(.body)
                       .fontWeight(.thin)
                       .multilineTextAlignment(.center)
                       .padding([.leading, .bottom, .trailing])
@@ -74,7 +74,7 @@ struct InsightsListDetailView: View {
                   .foregroundColor(Color("ColorGreenAdaptive"))
                 
                   Text(tipsText)
-                      .fontWeight(.thin)
+                    .fontWeight(.ultraLight)
                   .lineLimit(nil)
                   .multilineTextAlignment(.center)
                       .font(.body)
