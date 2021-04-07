@@ -23,7 +23,7 @@ class InstagramApi {
     }
     
     private enum Method: String {
-        case authorize = "oauth/authorize"
+        case authorize = "oauth/authorize/"
         case access_token = "oauth/access_token"
     }
     
@@ -32,6 +32,7 @@ class InstagramApi {
     
     //MARK:- Private Methods
     private func getFormBody(_ parameters: [[String : String]], _ boundary: String) -> Data {
+        print("***getFormBody***")
         var body = ""
         let error: NSError? = nil
         for param in parameters {
@@ -59,6 +60,7 @@ class InstagramApi {
     }
     
     private func getTokenFromCallbackURL(request: URLRequest) -> String? {
+        print("***getTokenFromCallbackURL***")
         let requestURLString = (request.url?.absoluteString)! as String
         if requestURLString.starts(with: "\(redirectURI)?code=") {
             
@@ -71,6 +73,7 @@ class InstagramApi {
     }
     
     func getMediaData(testUserData: InstagramTestUser, completion: @escaping (Feed) -> Void) {
+        print("***getMediaData***")
         let urlString = "\(BaseURL.graphApi.rawValue)me/media?fields=id,caption&access_token=\(testUserData.access_token)"
         
         let request = URLRequest(url: URL(string: urlString)!)
@@ -96,8 +99,9 @@ class InstagramApi {
     
     //MARK:- Public Methods
     func authorizeApp(completion: @escaping (_ url: URL?) -> Void ) {
-        let urlString = "\(BaseURL.displayApi.rawValue)\(Method.authorize.rawValue)?app_id=\(instagramAppID)&redirect_uri=\(redirectURIURLEncoded)&scope=user_profile,user_media&response_type=code"
-        
+        print("***authorizeApp***")
+        let urlString = "\(BaseURL.displayApi.rawValue)\(Method.authorize.rawValue)?force_authentication=1&app_id=\(instagramAppID)&redirect_uri=\(redirectURIURLEncoded)&scope=user_profile,user_media&response_type=code"
+        print(urlString)
         let request = URLRequest(url: URL(string: urlString)!)
         
         let session = URLSession.shared
@@ -111,10 +115,13 @@ class InstagramApi {
     }
     
     func getTestUserIDAndToken(request: URLRequest, completion: @escaping (InstagramTestUser) -> Void){
-        
+        print("***getTestUserIDAndToken***")
+        print("FirstForm____")
+        print(request)
         guard let authToken = getTokenFromCallbackURL(request: request) else {
             return
         }
+        print(authToken)
         
         let headers = [
             "content-type": "multipart/form-data; boundary=\(boundary)"
@@ -143,7 +150,7 @@ class InstagramApi {
         ]
         
         var request = URLRequest(url: URL(string: BaseURL.displayApi.rawValue + Method.access_token.rawValue)!)
-        
+        print(request)
         let postData = getFormBody(parameters, boundary)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
@@ -170,6 +177,7 @@ class InstagramApi {
 
     
     func getInstagramUser(testUserData: InstagramTestUser, completion: @escaping (InstagramUser) -> Void) {
+        print("***getInstagramUser***")
         let urlString = "\(BaseURL.graphApi.rawValue)\(testUserData.user_id)?fields=id,username&access_token=\(testUserData.access_token)"
         let request = URLRequest(url: URL(string: urlString)!)
         let session = URLSession.shared
@@ -192,6 +200,7 @@ class InstagramApi {
     }
     
     func getMedia(testUserData: InstagramTestUser, completion: @escaping (InstagramMedia) -> Void) {
+        print("***getMedia***")
         
         getMediaData(testUserData: testUserData) { (mediaFeed) in
             let urlString = "\(BaseURL.graphApi.rawValue + mediaFeed.data[1].id)?fields=id,media_type,media_url,username,timestamp&access_token=\(testUserData.access_token)"
@@ -217,6 +226,7 @@ class InstagramApi {
     }
     
     func fetchImage(urlString: String, completion: @escaping (Data?) -> Void) {
+        print("***fetchImage***")
         let request = URLRequest(url: URL(string: urlString)!)
         
         let session = URLSession.shared

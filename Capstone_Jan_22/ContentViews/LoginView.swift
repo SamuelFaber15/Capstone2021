@@ -16,7 +16,7 @@ struct LoginView: View {
     @State private var action: Action?
     var body: some View {
         VStack {
-            SignInWithEmailView(showSheet: $showSheet, action: $action)
+            SignInWithEmailView()
         }
     }
 }

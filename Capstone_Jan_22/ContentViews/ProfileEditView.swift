@@ -49,9 +49,9 @@ struct ProfileEditView: View {
             TextField("Name", text: $name)
           }
           
-          Section(header: Text("Email")) {
-            TextField("Email", text: $email)
-          }
+//          Section(header: Text("Email")) {
+//            TextField("Email", text: $email)
+//          }
         }
         .navigationTitle("Profile")
         .navigationBarTitleDisplayMode(.large)
